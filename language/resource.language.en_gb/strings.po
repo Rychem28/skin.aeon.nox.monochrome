@@ -3067,8 +3067,8 @@ msgstr "Special Features"
 
 #Name of colour new colour theme
 msgctxt "#32006"
-msgid "Aeon Nox SB Monochrome"
-msgstr "Aeon Nox SB Monochrome"
+msgid "Aeon Nox Monochrome"
+msgstr "Aeon Nox Monochrome"
 
 msgctxt "#32007"
 msgid "Backgrounds/Icons"

@@ -1701,7 +1701,7 @@
 		<color name="true grey 50%">817f7f7f</color>
 		<color name="true grey 25%">417f7f7f</color>
 	</palette>
-	<palette name="Aeon Nox SB Monochrome">
+	<palette name="Aeon Nox Monochrome">
 		<color name="white">FFE5E5E5</color>
 		<color name="white2">D0FFFFFF</color>
 		<color name="grey">FFBDBDBD</color>
