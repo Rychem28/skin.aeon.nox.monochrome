@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_804_MusicFlix">
+		<control type="group">
+			<visible>Control.IsVisible(804) + !Window.IsActive(skinsettings)</visible>
+			<include>ViewAnimation</include>
+			<control type="group">
+				<animation effect="slide" start="0" end="0,60" time="0" tween="cubic" easing="inout" condition="Container.Content(albums)">Conditional</animation>
+				<control type="group">
+					<animation effect="slide" end="0,400" time="0" condition="Skin.HasSetting(Disable.MusicFlixInfo)">Conditional</animation>
+					<!-- <control type="image">
+						<left>400</left>
+						<top>150</top>
+						<width>400</width>
+						<height>155</height>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true">$VAR[ArtworkLogoVar]</texture>
+						<visible>Container.Content(albums) | Container.Content(artists)</visible>
+					</control> -->
+					<control type="label">
+						<left>25</left>
+						<top>-10</top>
+						<height>124</height>
+                        <width>1600</width>                         
+						<scroll>true</scroll>
+						<font>font_musicviz2</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Title]</label>
+						<visible>Container.Content(albums) | Container.Content(artists)</visible>
+					</control>
+				</control>
+				<control type="group"> <!-- information box -->
+					<left>10</left>
+					<top>115</top>
+					<width>1000</width>
+					<height>220</height>
+					<include>VisibleFadeAnimation</include>
+					<visible>!Skin.HasSetting(Disable.MusicFlixInfo)</visible>
+					<control type="group">
+						<control type="grouplist">
+							<visible>Container.Content(albums)</visible>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[31995]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
+								<width>800</width>
+								<include>DefaultButtonsValues</include>
+								<textcolor>grey</textcolor>
+								<visible>!String.IsEmpty(ListItem.Artist)</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+								<width>800</width>
+								<include>DefaultButtonsValues</include>
+								<textcolor>grey</textcolor>								
+								<visible>!String.IsEmpty(ListItem.Genre)</visible>
+							</control>
+							<control type="label">
+								<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),, min]</label>
+								<width>800</width>
+								<include>DefaultButtonsValues</include>
+								<textcolor>grey</textcolor>
+								<visible>!String.IsEmpty(ListItem.Genre)</visible>
+							</control>
+						</control>
+						<control type="textbox">
+							<top>230</top>	
+							<left>15</left>
+							<label>$VAR[MusicPlotVar]</label>
+							<width>800</width>
+							<height>180</height>
+							<font>font15</font>
+							<textcolor>grey</textcolor>
+							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
+							<visible>!String.IsEmpty(ListItem.Title)</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="fixedlist" id="804"> <!-- Item List -->
+				<top>500</top>
+				<width>1920</width>
+				<height>600</height>
+				<visible>Container.Content(albums) | Container.Content(artists)</visible>
+				<onleft>804</onleft>
+				<onright>804</onright>
+				<onup>SetProperty(MediaMenu,True,Home)</onup>
+				<onup>SetFocus(9050)</onup>
+				<ondown condition="Control.IsVisible(80460)">80460</ondown>
+				<ondown condition="!Control.IsVisible(80460)">4400</ondown>
+				<viewtype label="$LOCALIZE[31996]">bigwrap</viewtype>
+				<pagecontrol>80460</pagecontrol>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="400" width="400" condition="Container.Content(albums) | Container.Content(artists)">
+					<include>MusicFlixPoster</include>				
+					<control type="image">
+						<left>10</left>
+						<top>75</top>
+						<width>400</width>
+						<height>400</height>
+						<texture border="1">black.png</texture>
+						<colordiffuse>$VAR[MusicFlixDimmerVar]</colordiffuse>
+						<bordersize>20</bordersize>
+					</control>
+					<include>MusicFlixPosterReflection</include>
+				</itemlayout>
+				<focusedlayout height="400" width="400" condition="Container.Content(albums) | Container.Content(artists)">
+					<control type="group">
+						<visible>[[Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(7000)] | Container.Content(albums) | Container.Content(artists)</visible>
+						<include>MusicFlixPoster</include>
+						<include>MusicFlixPosterReflection</include>						
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group" id="7000">
+				<visible>Container.Content(albums) | Container.Content(artists)</visible>
+				<animation effect="fade" time="1600" end="0" reversible="false">Hidden</animation>
+				<control type="label">
+					<include>HiddenObject</include>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="MusicFlixPoster">
+		<control type="image">
+			<left>10</left>
+			<top>75</top>
+			<width>400</width>
+			<height>400</height>
+			<texture background="true">$VAR[PosterThumbVar]</texture>
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="MusicFlixPosterReflection">
+		<control type="image">
+			<left>29</left>
+			<top>465</top>
+			<width>360</width>
+			<height>402</height>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_reflect.png">$VAR[PosterThumbVar]</texture>
+		</control>
+	</include>
+</includes>

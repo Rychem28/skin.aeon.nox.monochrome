@@ -1,0 +1,98 @@
+Copy backgrounds/colourbackgrounds
+Copy en_GB/strings.po
+Copy 803/804/805/806 xml files
+Copy Font.xml
+
+custom_1129_Select
+
+Line 25-28 copy
+Line 159-162 copy
+
+custom_1130_Views
+
+Line 277-299 Copy
+
+custom_1131_Viewsettings
+
+Line 96-99 Copy
+
+custom_1132_disableviews
+
+Line 248-276
+
+custom_1140_colors
+
+Line 230-276 Copy
+Add extra variables to all the other presets
+create new preset
+creaet new menu item
+
+Includes
+
+Line 42-45 Copy
+Line 151-154 Copy
+Line 2312-2539 Copy to Includes_Select
+Line 496 - include view # for top bar display
+
+Includes_Home
+
+Line 117-192 Copy - Home page buttons
+Multiple lines for control - reconfigure these
+Line 218 Copy - Weather Icon
+
+Includes_ViewSettings
+
+Line 797-918 Copy
+
+Variables
+
+Copy bottom portions
+Disc # for multidiscs
+
+
+MyWeather
+
+Add into all imagepath colordiffuse="$VAR[WeatherIconColor]"
+Line 134 add colordiffuse="$VAR[HighlightBarColor]"
+
+Line 664-673 Copy (Move to end of file)
+DiscArtVar - Line 726-760 (see changes)
+
+
+Includes_Backgrounds
+
+Line 56 (add Control.IsVisible(804) - gradient background
+
+MyMusicNav
+
+Includes for new views
+Line 330-472 Copy - Bottom display
+
+MyVideoNav
+
+Line 595-621 Copy Colour stars and year
+Line 834 Repeat above for tv seasons
+
+MyPics
+
+Add View 806
+
+MusicVisualisation
+
+Custom_1134_PauseOverlay
+
+StarRating
+
+Includes_CommonValues
+
+Line 468/469 Copy - for launching AML and Steam
+
+Settings
+
+Line 62 - add texture diffuse diffuse="buttonoverlay.png"
+
+WeatherDefault
+$VAR[WeatherBackPathVar] change any $INFO[Skin.Setting(weatherfanart.path)
+Add special://skin.media.weather to variables for weather
+Add weatherback variable below icons variables
+

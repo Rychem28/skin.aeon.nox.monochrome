@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include name="View_803_GameFlix">
+		<control type="group">
+			<visible>Control.IsVisible(803) + !Window.IsActive(skinsettings)</visible>
+			<include>ViewAnimation</include>
+			<control type="group">
+				<animation effect="slide" start="0" end="0,60" time="0" tween="cubic" easing="inout">Conditional</animation>
+                <control type="label">
+                    <left>25</left>
+                    <top>-10</top>
+                    <height>124</height>
+                    <scroll>true</scroll>
+                    <width>1600</width> <!-- change to fit with new window -->
+                    <font>font_musicviz2</font>
+                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+     			<control type="group"> <!-- information box -->
+					<left>10</left>
+					<top>115</top>
+					<width>1000</width>
+					<height>220</height>
+					<include>VisibleFadeAnimation</include>
+					<control type="group">
+						<control type="grouplist">
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]MAME Version Added:[/COLOR][CR]$INFO[ListItem.Property(veradded)]</label>
+								<width>800</width>
+								<include>DefaultButtonsValues</include>
+								<textcolor>grey</textcolor>
+								<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]Display Type:[/COLOR][CR]$VAR[AMLDTypeVar]/$VAR[AMLDRotateVar]</label>
+								<width>800</width>
+								<include>DefaultButtonsValues</include>
+								<textcolor>grey</textcolor>								
+								<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+							</control>
+						</control>
+ 						<control type="textbox">
+							<top>180</top>	
+							<left>15</left>
+							<label>$INFO[ListItem.Plot]</label>
+							<width>800</width>
+							<height>280</height>
+							<font>font15</font>
+							<textcolor>grey</textcolor>
+							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
+							<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
+						</control>
+ 						<control type="textbox">
+							<top>180</top>	
+							<left>1215</left>
+							<label>$INFO[ListItem.Plot]</label>
+							<width>800</width>
+							<height>280</height>
+							<font>font15</font>
+							<textcolor>grey</textcolor>
+							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
+							<visible>Skin.HasSetting(Enable.GameFlixInfo)</visible>
+						</control>                         
+						<control type="textbox">
+							<top>180</top>	
+							<left>15</left>
+							<label>$INFO[ListItem.Property(history)]</label>
+							<width>800</width>
+							<height>280</height>
+							<font>font15</font>
+							<textcolor>grey</textcolor>
+							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
+							<visible>!String.Contains(ListItem.Property(history),"not found") + String.IsEqual(ListItem.Property(platform),MAME)</visible>
+						</control>
+					</control>
+				</control>
+				<control type="group"> <!-- extra art items -->
+					 <control type="image"> <!-- display cartridge box in window -->
+						<left>10</left>
+						<top>140</top>
+						<width>490</width>
+						<height>490</height>
+						<aspectratio align="left" aligny="bottom">keep</aspectratio>
+						<texture background="true">$VAR[Art_CartBox_or_Flyer]</texture>
+						<bordertexture border="50">listpanel_back.png</bordertexture>
+						<bordersize>35</bordersize>
+						<visible>Skin.HasSetting(Enable.GameFlixBoxFront)</visible>
+					</control>
+                </control>
+				<control type="fixedlist" id="803">
+					<top>490</top>
+					<width>1920</width>
+					<height>600</height>
+					<visible>true</visible>
+					<onleft>803</onleft>
+					<onright>803</onright>
+					<onup>SetProperty(MediaMenu,True,Home)</onup>
+					<onup>SetFocus(9050)</onup>
+					<ondown condition="Control.IsVisible(80360)">80360</ondown>
+					<ondown condition="!Control.IsVisible(80360)">4400</ondown>
+					<viewtype label="$LOCALIZE[31998]">bigwrap</viewtype>
+					<pagecontrol>80360</pagecontrol>
+					<orientation>horizontal</orientation>
+					<preloaditems>2</preloaditems>
+					<focusposition>0</focusposition>
+					<itemlayout condition="$EXP[PluginAdvancedLauncher]" height="390" width="390">
+						<control type="group">
+							<include>GameFlixPoster</include>
+							<include>GameFlixPosterReflection</include>
+							<control type="image">
+								<left>10</left>
+								<top>75</top>
+								<width>390</width>
+								<height>390</height>
+								<texture border="1">black.png</texture>
+								<colordiffuse>$VAR[GameFlixDimmerVar]</colordiffuse>
+								<bordersize>20</bordersize>
+							</control>
+						</control>	
+					</itemlayout>
+					<focusedlayout condition="$EXP[PluginAdvancedLauncher]" height="390" width="390">
+						<control type="group">
+							<include>GameFlixPoster</include>
+							<include>GameFlixPosterReflection</include>
+							<!-- Trailer Trigger - place holder moved to My Programs
+							<control type="button">
+								<left>0</left>
+								<top>0</top>
+								<width>1</width>
+								<height>1</height>
+								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)">PlayMedia($INFO[ListItem.trailer],1)</onfocus>
+								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)">PlayerControl(RepeatOff)</onfocus>
+								<!-- <onfocus condition="!Player.Muted"></onfocus>
+								<onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
+								<!-- <onunfocus>Action(Mute)</onunfocus> 
+								<texturefocus>-</texturefocus>
+								<texturenofocus>-</texturenofocus>
+								<animation type="Focus">
+								<effect type="fade" delay="250" start="0" end="100" />
+								</animation>
+							</control>-->
+						</control>
+					</focusedlayout>
+					<itemlayout condition="$EXP[PluginSteamLauncher]" height="200" width="600">
+						<control type="group">
+							<include>GameFlixPosterWide</include>
+							<include>GameFlixPosterReflectionWide</include>
+							<control type="image">
+								<left>10</left>
+								<top>75</top>
+								<width>600</width>
+								<height>200</height>
+								<texture border="1">black.png</texture>
+								<colordiffuse>$VAR[GameFlixDimmerVar]</colordiffuse>
+								<bordersize>20</bordersize>
+							</control>
+						</control>	
+					</itemlayout>
+					<focusedlayout condition="$EXP[PluginSteamLauncher]" height="200" width="600">
+						<control type="group">
+							<include>GameFlixPosterWide</include>
+							<include>GameFlixPosterReflectionWide</include>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="GameFlixPoster">
+		<control type="image">
+			<left>10</left>
+			<top>75</top>
+			<width>390</width>
+			<height>390</height>
+			<texture background="true">$INFO[Listitem.Icon]</texture> <!-- configurable image in add-on -->
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="GameFlixPosterReflection">
+		<control type="image">
+			<left>29</left>
+			<top>465</top>
+			<width>350</width>
+			<height>402</height>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[Listitem.Icon]</texture>
+		</control>
+	</include>
+	<include name="GameFlixPosterWide">
+		<control type="image">
+			<left>10</left>
+			<top>0</top>
+			<width>600</width>
+			<height>200</height>
+			<texture background="true">$INFO[Listitem.Icon]</texture> <!-- configurable image in add-on -->
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="GameFlixPosterReflectionWide">
+		<control type="image">
+			<left>29</left>
+			<top>465</top>
+			<width>600</width>
+			<height>202</height>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[Listitem.Icon]</texture>
+		</control>
+	</include>	
+</includes>

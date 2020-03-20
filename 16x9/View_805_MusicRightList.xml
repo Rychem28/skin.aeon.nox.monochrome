@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- Music RightList -->
+	<include name="View_805_MusicRightList">
+		<control type="group">
+			<visible>Control.IsVisible(805) + !Window.IsActive(addoninformation)</visible>
+			<include>ViewAnimation</include>
+			<control type="group">
+				<visible>[!Skin.HasSetting(Disable.MusicRightListAlbum) + [Container.Content(albums) | Container.Content(songs)]] | [!Skin.HasSetting(Disable.MusicRightListThumb) + Container.Content(artists)]</visible>
+				<control type="group">
+					<control type="image">
+						<left>350</left>
+						<top>185</top>					
+						<width>750</width>
+						<height>750</height>
+						<aspectratio align="right">keep</aspectratio>
+						<animation effect="rotate" end="-360" center="auto" time="10000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+						<texture background="true" diffuse="thumbs/boxes/cdart_mask.png">$VAR[ArtworkDiscVar]</texture>
+						<visible>Skin.HasSetting(Enable.MusicRightListCDArt)</visible>
+					</control>
+					<control type="image">
+						<top>160</top>
+						<left>0</left>
+						<width>800</width>
+						<height>800</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+				</control>
+			</control>
+			<control type="image">
+				<left>80</left>
+				<top>860</top>
+				<width>580</width>
+				<height>225</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[ArtworkLogoVar]</texture>
+				<include>VisibleFadeAnimation</include>
+				<visible>Skin.HasSetting(MusicRightListlogoartist)</visible>
+			</control>
+			<control type="group">
+				<control type="label">  <!-- Album title to match MusicFlx -->
+					<left>25</left>
+					<top>50</top>
+					<height>124</height>
+					<scroll>true</scroll>
+					<font>font_musicviz2</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.album]</label>
+					<visible>Container.Content(songs)</visible>
+				</control>
+				<animation effect="slide" end="-430,0" time="0" tween="cubic" easing="inout">Conditional</animation>
+			</control>
+			<control type="wraplist" id="805">
+				<left>1030</left>
+				<top>190</top>
+				<width>880</width>
+				<height>880</height>
+				<onleft condition="Control.IsVisible(80563)">80563</onleft>
+				<onleft condition="!Control.IsVisible(80563)">SetProperty(MediaMenu,True,Home)</onleft>
+				<onleft condition="!Control.IsVisible(80563)">SetFocus(9050)</onleft>
+				<onright condition="Control.IsVisible(80560)">80560</onright>
+				<onright condition="!Control.IsVisible(80560)">4400</onright>
+				<onup>805</onup>
+				<ondown>805</ondown>
+				<pagecontrol>80560</pagecontrol>
+				<focusposition>8</focusposition>
+				<viewtype label="$LOCALIZE[31999]">list</viewtype>
+				<scrolltime tween="quadratic" easing="out">200</scrolltime>
+				<itemlayout height="90" width="806">
+					<include content="MusicRightListItemLayout">
+						<param name="width">810</param>
+					</include>
+				</itemlayout>
+				<focusedlayout height="90" width="806" condition="!Skin.HasSetting(MusicRightList.AlternateMusic) + [Container.Content(albums) | Container.Content(songs)]">
+					<control type="image">
+						<include>MusicRightListFocusedHighLightContent</include>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<include content="MusicRightListFocusedLayout">
+						<param name="width">810</param>
+					</include>
+				</focusedlayout>
+				<focusedlayout height="90" width="806" condition="Skin.HasSetting(MusicRightList.AlternateMusic) + [Container.Content(albums) | Container.Content(songs)]">
+					<include content="MusicRightListFocusedLayout">
+						<param name="width">810</param>
+						<param name="labelColor">$VAR[ThemeLabelColor]</param>
+					</include>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="80560">
+				<left>1908</left>
+				<top>60</top>
+				<width>5</width>
+				<height>990</height>
+				<onup>60</onup>
+				<ondown>60</ondown>
+				<onleft>805</onleft>
+				<onright>4400</onright>
+				<texturesliderbackground />
+				<texturesliderbar>listselect_fo.png</texturesliderbar>
+				<texturesliderbarfocus>listselect_fo.png</texturesliderbarfocus>
+				<textureslidernib />
+				<textureslidernibfocus />
+				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(80560) + !Container.Scrolling">Conditional</animation>
+				<animation effect="zoom" start="100,100" end="200,100" center="auto" tween="sine" easing="inout" time="500" pulse="true" condition="Control.HasFocus(80560)">Conditional</animation>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+			</control>
+		</control>
+	</include>
+	<include name="MusicRightListFocusedHighLightContent">
+		<left>30</left>
+		<width>850</width>
+		<height>90</height>
+		<texture colordiffuse="$VAR[HighlightBarColor]" border="4">listselect_fo.png</texture>
+		<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(805)">Conditional</animation>
+	</include>
+	<!-- PARAM Includes -->
+	<include name="MusicRightListFocusedLayout">
+		<param name="visibleSubLabelNoYear" default="[Container.Content(movies) + !Skin.HasSetting(MusicRightListalternate)] | [!Container.Content(movies) + !Skin.HasSetting(MusicRightListalternatetv) + !Window.IsActive(music)]" />
+		<param name="visibleListItem.Overlay" default="true" />
+		<param name="width" />
+		<param name="labelColor" default="white" />
+		<definition>
+			<control type="label">
+				<top>5</top>
+				<left>45</left>
+				<width>$PARAM[width]</width>
+				<height>40</height>
+				<font>font16</font>
+				<align>right</align>
+				<textcolor>$PARAM[labelColor]</textcolor>
+				<label>$VAR[MusicRightListItemLabelVar]</label>
+				<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(805)">Conditional</animation>
+				<visible>!ListItem.IsCollection + !Container.Content(seasons) + !String.IsEqual(ListItem.DBTYPE,season)</visible>
+			</control>
+			<control type="group">
+				<left>45</left>
+				<top>45</top>
+				<width>$PARAM[width]</width>
+				<control type="label">
+					<height>40</height>
+					<align>right</align>
+					<label>$VAR[MusicRightListSubLabelVar]</label>
+					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(805)">Conditional</animation>
+					<animation effect="slide" end="-155" time="0" condition="!String.IsEmpty(ListItem.UserRating) + Window.IsActive(music)">Conditional</animation>
+					<visible>!ListItem.IsCollection + !Container.Content(seasons)</visible>
+				</control>
+				<control type="image">
+					<left>662</left>
+					<width>150</width>
+					<height>40</height>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>$VAR[RatingStarColor]</colordiffuse>
+					<texture fallback="rating0.png">$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
+					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(805)">Conditional</animation>
+					<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.UserRating) + Window.IsActive(music)</visible>
+				</control>
+			</control>
+			<control type="label">
+				<left>735</left>
+				<top>25</top>
+				<width>100</width>
+				<height>40</height>
+				<font>font16</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Year]</label>
+				<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(805)">Conditional</animation>
+				<visible>$PARAM[visibleSubLabelNoYear]</visible>
+				<visible>!Container.Content(episodes)</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="MusicRightListItemLayout">
+		<param name="visibleSubLabelNoYear" default="[Container.Content(movies) + !Skin.HasSetting(MusicRightListalternate)] | [!Container.Content(movies) + !Skin.HasSetting(MusicRightListalternatetv) + !Window.IsActive(music)]" />
+		<param name="width" />
+		<param name="labelColor" default="white" />
+		<definition>
+			<control type="label">
+				<left>45</left>
+				<top>25</top>
+				<width>$PARAM[width]</width>
+				<height>40</height>
+				<font>font16</font>
+				<align>right</align>
+				<textcolor>$PARAM[labelColor]</textcolor>
+				<label>$VAR[MusicRightListItemLabelVar]</label>
+			</control>
+			<control type="label">
+				<left>735</left>
+				<top>25</top>
+				<width>100</width>
+				<height>40</height>
+				<font>font16</font>
+				<align>right</align>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<label>$INFO[ListItem.Year]</label>
+				<visible>!Container.Content(episodes)</visible>
+				<visible>$PARAM[visibleSubLabelNoYear]</visible>
+			</control>
+		</definition>
+	</include>
+</includes>
