@@ -391,7 +391,7 @@
 					<visible>!String.IsEmpty(ListItem.Album)</visible>					
 				</control>
 				<control type="group"> <!-- Tracklisting -->
-					<left>640</left>
+					<left>600</left>
 					<control type="label">
 						<height>40</height>
 						<width>140</width>
@@ -410,23 +410,21 @@
 						<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
 						<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
 						<visible>!String.IsEmpty(ListItem.Album)</visible>
-					</control>					
+					</control>
 					<control type="wraplist" id="777">  
 						<include>HiddenObject</include>
-						<left>160</left>
+						<left>90</left>
 						<onleft>804</onleft>
 						<onright>804</onright>
-						<width>400</width>
+						<width>600</width>
 						<height>80</height>
 						<visible>!String.IsEmpty(ListItem.Album)</visible>						
-						<autoscroll>true</autoscroll>
-						<include>MediaFlagValues</include>
-						<scrolltime tween="linear" easing="inout">3000</scrolltime>
 						<orientation>vertical</orientation>
+						<wrapmultiline>true</wrapmultiline>
 						<content sortby="track" sortorder="ascending">$INFO[ListItem.FolderPath]</content>
-						<itemlayout height="40" width="600">
+						<itemlayout height="30" width="600">
 						</itemlayout>
-						<focusedlayout height="40" width="600">
+						<focusedlayout height="30" width="600">
 						</focusedlayout>
 					</control>
 				</control>

@@ -22,24 +22,30 @@
 		<description lang="en_US">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
 		<platform>all</platform>
 		<license>CC BY-NC-SA 4.0</license>
-		<forum>http://forum.kodi.tv/showthread.php?tid=210069</forum>
-		<website>https://github.com/mikesilvo164/Aeon-Nox-SiLVO</website>
-		<source>https://github.com/mikesilvo164/Aeon-Nox-SiLVO</source>
+		<forum></forum>
+		<website>https://github.com/Rychem28/skin.aeon.nox.monochrome</website>
+		<source>https://github.com/Rychem28/skin.aeon.nox.monochrome</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-06.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-07.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-08.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-11.jpg</screenshot>
-			<screenshot>resources/screenshots/screenshot-12.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot000.png</screenshot>
+			<screenshot>resources/screenshots/screenshot001.png</screenshot>
+			<screenshot>resources/screenshots/screenshot002.png</screenshot>
+			<screenshot>resources/screenshots/screenshot003.png</screenshot>
+			<screenshot>resources/screenshots/screenshot004.png</screenshot>
+			<screenshot>resources/screenshots/screenshot005.png</screenshot>
+			<screenshot>resources/screenshots/screenshot006.png</screenshot>
+			<screenshot>resources/screenshots/screenshot007.png</screenshot>
+			<screenshot>resources/screenshots/screenshot008.png</screenshot>
+			<screenshot>resources/screenshots/screenshot009.png</screenshot>
+			<screenshot>resources/screenshots/screenshot010.png</screenshot>
+			<screenshot>resources/screenshots/screenshot011.png</screenshot>
+			<screenshot>resources/screenshots/screenshot012.png</screenshot>
+			<screenshot>resources/screenshots/screenshot013.png</screenshot>
+			<screenshot>resources/screenshots/screenshot014.png</screenshot>
+			<screenshot>resources/screenshots/screenshot015.png</screenshot>
+			<screenshot>resources/screenshots/screenshot016.png</screenshot>
+			<screenshot>resources/screenshots/screenshot017.png</screenshot>
 		</assets>
 		<news></news>
 	</extension>
