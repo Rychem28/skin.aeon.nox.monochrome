@@ -54,11 +54,11 @@
 								<visible>!String.IsEmpty(ListItem.Genre)</visible>
 							</control>
 							<control type="label">
-								<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),, min]</label>
+								<label>$INFO[Window(home).Property(SkinInfo.Album.Songs.Duration)]m</label>
 								<width>800</width>
 								<include>DefaultButtonsValues</include>
 								<textcolor>grey</textcolor>
-								<visible>!String.IsEmpty(ListItem.Genre)</visible>
+								<visible>!String.IsEmpty(Window(home).Property(SkinInfo.Album.Songs.Duration))</visible>
 							</control>
 						</control>
 						<control type="textbox">

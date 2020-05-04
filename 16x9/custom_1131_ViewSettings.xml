@@ -96,7 +96,8 @@
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix)">MusicFlixViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList)">MusicRightListViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix)">PictureFlixViewSettings</include>
-				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures)">SpecialFeaturesViewSettings</include>                 
+				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures)">SpecialFeaturesViewSettings</include>
+                <include condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix)">NetflixViewSettings</include>
 				<!-- Bottom Settings -->
 				<!-- Button IDs (1550-1559) -->
 				<!-- InfoPopup Delay -->

@@ -288,7 +288,16 @@
 					<onclick>SetProperty(DisableView,True,1132)</onclick>
 					<onclick>Skin.ToggleSetting(Disable.SpecialFeaturesView)</onclick>
 					<selected>!Skin.HasSetting(Disable.SpecialFeaturesView)</selected>
-				</control>                
+				</control>
+				<control type="radiobutton" id="1641">
+					<description>Disable Netflix</description>
+					<textwidth>375</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[32004]</label>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.NetflixView</onclick>
+					<selected>!Skin.HasSetting(Disable.NetflixView)</selected>
+				</control>                 
 			</control>
 			<control type="togglebutton" id="9013">
 				<visible>!Skin.HasSetting(KioskMode.Enabled)</visible>

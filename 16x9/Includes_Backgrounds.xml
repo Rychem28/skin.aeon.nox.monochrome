@@ -134,10 +134,10 @@
 			<height>864</height>
 			<colordiffuse>$VAR[BackGroundDiffuseVar]</colordiffuse>
 			<texture background="true" diffuse="views/myflix/fanart_diffuse.png">$VAR[GlobalBackgroundVar]</texture>
-			<visible>Control.IsVisible(509) | Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(807)</visible>
+			<visible>Control.IsVisible(509) | Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(807) | Control.IsVisible(808)</visible>
 		</control>
 		<control type="image"> <!-- all other views -->
-			<visible>![Control.IsVisible(509) | Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(807)]</visible>
+			<visible>![Control.IsVisible(509) | Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(807) | Control.IsVisible(808)]</visible>
 			<include>FullscreenDimensions</include>			
 			<aspectratio>keep</aspectratio>
 			<colordiffuse>$VAR[BackGroundDiffuseVar]</colordiffuse>

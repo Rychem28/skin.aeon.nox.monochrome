@@ -44,7 +44,8 @@
 	<include file="View_804_MusicFlix.xml" />
 	<include file="View_805_MusicRightList.xml" />
 	<include file="View_806_PictureFlix.xml" />
-	<include file="View_807_SpecialFeatures.xml" />		
+	<include file="View_807_SpecialFeatures.xml" />
+	<include file="View_808_Netflix.xml" />
 	<!-- Media Menu -->
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="440,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(Home).Property(MediaMenu))">Conditional</animation>
@@ -156,6 +157,7 @@
 			<onclick condition="Control.IsVisible(805)">SetProperty(actualViewtype,MusicRightList,Home)</onclick>
 			<onclick condition="Control.IsVisible(806)">SetProperty(actualViewtype,PictureFlix,Home)</onclick>
 			<onclick condition="Control.IsVisible(807)">SetProperty(actualViewtype,SpecialFeatures,Home)</onclick>            
+			<onclick condition="Control.IsVisible(808)">SetProperty(actualViewtype,Netflix,Home)</onclick>  
 			<onclick>ActivateWindow(1131)</onclick>
 		</control>
 		<control type="button" id="3">
@@ -494,7 +496,7 @@
 			<animation effect="slide" start="0,0" end="0,-90" time="500" tween="cubic" condition="Control.IsVisible(609) + String.IsEmpty(Skin.String(609.NoTopBar)) + System.IdleTime(2)">Conditional</animation>
 			<animation effect="slide" start="0,-90" end="0,0" time="500" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="500" condition="Window.Next(Home)">WindowClose</animation>
-			<visible>[Control.IsVisible(50) + String.IsEmpty(Skin.String(50.NoTopBar))] | [Control.IsVisible(51) + String.IsEmpty(Skin.String(51.NoTopBar))] | [Control.IsVisible(52) + String.IsEmpty(Skin.String(52.NoTopBar))] | [Control.IsVisible(53) + String.IsEmpty(Skin.String(53.NoTopBar))] | [Control.IsVisible(54) + String.IsEmpty(Skin.String(54.NoTopBar))] | [Control.IsVisible(55) + String.IsEmpty(Skin.String(55.NoTopBar))] | [Control.IsVisible(56) + String.IsEmpty(Skin.String(56.NoTopBar))] | [Control.IsVisible(57) + String.IsEmpty(Skin.String(57.NoTopBar))] | [Control.IsVisible(58) + String.IsEmpty(Skin.String(58.NoTopBar))] | [Control.IsVisible(59) + String.IsEmpty(Skin.String(59.NoTopBar))] | [Control.IsVisible(499) + String.IsEmpty(Skin.String(499.NoTopBar))] | [Control.IsVisible(500) + String.IsEmpty(Skin.String(500.NoTopBar))] | [Control.IsVisible(501) + String.IsEmpty(Skin.String(501.NoTopBar))] | [Control.IsVisible(502) + String.IsEmpty(Skin.String(502.NoTopBar))] | [Control.IsVisible(503) + String.IsEmpty(Skin.String(503.NoTopBar))] | [Control.IsVisible(504) + String.IsEmpty(Skin.String(504.NoTopBar))] | [Control.IsVisible(505) + String.IsEmpty(Skin.String(505.NoTopBar))] | [Control.IsVisible(507) + String.IsEmpty(Skin.String(507.NoTopBar))] | [Control.IsVisible(508) + String.IsEmpty(Skin.String(508.NoTopBar))] | [Control.IsVisible(591) + String.IsEmpty(Skin.String(591.NoTopBar))] | [Control.IsVisible(592) + String.IsEmpty(Skin.String(592.NoTopBar))] | [Control.IsVisible(601) + String.IsEmpty(Skin.String(601.NoTopBar))] | [Control.IsVisible(602) + String.IsEmpty(Skin.String(602.NoTopBar))] | [Control.IsVisible(603) + String.IsEmpty(Skin.String(603.NoTopBar))] | [Control.IsVisible(609) + String.IsEmpty(Skin.String(609.NoTopBar))] | [Control.IsVisible(506) + String.IsEmpty(Skin.String(506.NoTopBar))] | [Control.IsVisible(509) + String.IsEmpty(Skin.String(509.NoTopBar))] | [Control.IsVisible(603) + String.IsEmpty(Skin.String(603.NoTopBar))] | !Window.IsMedia | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(script-NextAired-TVGuide2.xml) | Window.IsActive(tvguide) | [Control.IsVisible(803) + String.IsEmpty(Skin.String(803.NoTopBar))] | [Control.IsVisible(804) + String.IsEmpty(Skin.String(804.NoTopBar))] | [Control.IsVisible(805) + String.IsEmpty(Skin.String(805.NoTopBar))] | [Control.IsVisible(806) + String.IsEmpty(Skin.String(806.NoTopBar))] | [Control.IsVisible(807) + String.IsEmpty(Skin.String(807.NoTopBar))]</visible>
+			<visible>[Control.IsVisible(50) + String.IsEmpty(Skin.String(50.NoTopBar))] | [Control.IsVisible(51) + String.IsEmpty(Skin.String(51.NoTopBar))] | [Control.IsVisible(52) + String.IsEmpty(Skin.String(52.NoTopBar))] | [Control.IsVisible(53) + String.IsEmpty(Skin.String(53.NoTopBar))] | [Control.IsVisible(54) + String.IsEmpty(Skin.String(54.NoTopBar))] | [Control.IsVisible(55) + String.IsEmpty(Skin.String(55.NoTopBar))] | [Control.IsVisible(56) + String.IsEmpty(Skin.String(56.NoTopBar))] | [Control.IsVisible(57) + String.IsEmpty(Skin.String(57.NoTopBar))] | [Control.IsVisible(58) + String.IsEmpty(Skin.String(58.NoTopBar))] | [Control.IsVisible(59) + String.IsEmpty(Skin.String(59.NoTopBar))] | [Control.IsVisible(499) + String.IsEmpty(Skin.String(499.NoTopBar))] | [Control.IsVisible(500) + String.IsEmpty(Skin.String(500.NoTopBar))] | [Control.IsVisible(501) + String.IsEmpty(Skin.String(501.NoTopBar))] | [Control.IsVisible(502) + String.IsEmpty(Skin.String(502.NoTopBar))] | [Control.IsVisible(503) + String.IsEmpty(Skin.String(503.NoTopBar))] | [Control.IsVisible(504) + String.IsEmpty(Skin.String(504.NoTopBar))] | [Control.IsVisible(505) + String.IsEmpty(Skin.String(505.NoTopBar))] | [Control.IsVisible(507) + String.IsEmpty(Skin.String(507.NoTopBar))] | [Control.IsVisible(508) + String.IsEmpty(Skin.String(508.NoTopBar))] | [Control.IsVisible(591) + String.IsEmpty(Skin.String(591.NoTopBar))] | [Control.IsVisible(592) + String.IsEmpty(Skin.String(592.NoTopBar))] | [Control.IsVisible(601) + String.IsEmpty(Skin.String(601.NoTopBar))] | [Control.IsVisible(602) + String.IsEmpty(Skin.String(602.NoTopBar))] | [Control.IsVisible(603) + String.IsEmpty(Skin.String(603.NoTopBar))] | [Control.IsVisible(609) + String.IsEmpty(Skin.String(609.NoTopBar))] | [Control.IsVisible(506) + String.IsEmpty(Skin.String(506.NoTopBar))] | [Control.IsVisible(509) + String.IsEmpty(Skin.String(509.NoTopBar))] | [Control.IsVisible(603) + String.IsEmpty(Skin.String(603.NoTopBar))] | !Window.IsMedia | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(script-NextAired-TVGuide2.xml) | Window.IsActive(tvguide) | [Control.IsVisible(803) + String.IsEmpty(Skin.String(803.NoTopBar))] | [Control.IsVisible(804) + String.IsEmpty(Skin.String(804.NoTopBar))] | [Control.IsVisible(805) + String.IsEmpty(Skin.String(805.NoTopBar))] | [Control.IsVisible(806) + String.IsEmpty(Skin.String(806.NoTopBar))] | [Control.IsVisible(807) + String.IsEmpty(Skin.String(807.NoTopBar))] | [Control.IsVisible(808) + String.IsEmpty(Skin.String(808.NoTopBar))]</visible>
 			<visible>!Skin.HasSetting(Disable.TopBar)</visible>
 			<control type="image">
 				<width>100%</width>
@@ -2433,8 +2435,8 @@
 			<width>1850</width>
 			<height>12</height>
 			<onup>803</onup>
-			<ondown condition="Integer.IsGreaterOrEqual(Container(803).NumPages,10) + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]">615</ondown>
-			<ondown condition="![Integer.IsGreaterOrEqual(Container(803).NumPages,10) + String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]]">4400</ondown>
+			<ondown condition="Integer.IsGreaterOrEqual(Container(803).NumPages,2) + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]">615</ondown>
+			<ondown condition="![Integer.IsGreaterOrEqual(Container(803).NumPages,2) + String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]]">4400</ondown>
 			<texturesliderbackground />
 			<texturesliderbar border="6,0,6,0">scrollbar/texturesliderbar_hor.png</texturesliderbar>
 			<texturesliderbarfocus colordiffuse="$VAR[ThemeLabelColor]">colors/white.png</texturesliderbarfocus>
@@ -2444,6 +2446,23 @@
 			<orientation>horizontal</orientation>
 			<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(80360) + !Container.Scrolling">Conditional</animation>
 		</control>
+		<control type="scrollbar" id="80860">
+			<left>30</left>
+			<top>80</top>
+			<width>1850</width>
+			<height>12</height>
+			<onup>803</onup>
+			<ondown condition="Integer.IsGreaterOrEqual(Container(808).NumPages,2) + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]">615</ondown>
+			<ondown condition="![Integer.IsGreaterOrEqual(Container(808).NumPages,2) + String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]]">4400</ondown>
+			<texturesliderbackground />
+			<texturesliderbar border="6,0,6,0">scrollbar/texturesliderbar_hor.png</texturesliderbar>
+			<texturesliderbarfocus colordiffuse="$VAR[ThemeLabelColor]">colors/white.png</texturesliderbarfocus>
+			<textureslidernib />
+			<textureslidernibfocus />
+			<showonepage>false</showonepage>
+			<orientation>horizontal</orientation>
+			<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(80860) + !Container.Scrolling">Conditional</animation>
+		</control>        
 	</include>
 	<include name="FullscreenInfo">
 		<control type="group">

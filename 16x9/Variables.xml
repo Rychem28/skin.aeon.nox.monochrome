@@ -809,6 +809,7 @@
 		<value condition="Control.HasFocus(1015)">$LOCALIZE[31464]</value>
 		<value condition="Control.HasFocus(1016)">$LOCALIZE[31463]</value>
 		<value condition="Control.HasFocus(1018)">$LOCALIZE[31497]</value>
+		<value condition="Control.HasFocus(1019)">$LOCALIZE[32047]</value>
 		<value condition="Control.HasFocus(2000)">$LOCALIZE[31917]</value>
 		<value condition="Control.HasFocus(2001)">$LOCALIZE[31918]</value>
 		<value condition="Control.HasFocus(2002)">$LOCALIZE[31919]</value>
@@ -1158,7 +1159,7 @@
 	<!-- DialogInfos -->
 	<variable name="DialogInfoBackgroundVar">
 		<value condition="Skin.HasSetting(Enable.BlurredVideoInfo)">$INFO[Window(Home).Property(ImageFilterFIVE)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(clearlogo">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
 	<variable name="DialogInfoDimmerVar">
@@ -1980,7 +1981,8 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(804.NoTopBar))">$INFO[Skin.String(804.NoTopBar)]</value>		
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(805.NoTopBar))">$INFO[Skin.String(805.NoTopBar)]</value>	
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(806.NoTopBar))">$INFO[Skin.String(806.NoTopBar)]</value>		
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(807.NoTopBar))">$INFO[Skin.String(807.NoTopBar)]</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(807.NoTopBar))">$INFO[Skin.String(807.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(808.NoTopBar))">$INFO[Skin.String(808.NoTopBar)]</value>
 		<value>$LOCALIZE[16041]</value>
 	</variable>
 	<variable name="NoTopBarOnClickVar">
@@ -2048,6 +2050,8 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(806.NoTopBar))">Skin.Reset(806.NoTopBar)</value>	
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + String.IsEmpty(Skin.String(807.NoTopBar))">Skin.SetString(807.NoTopBar,$LOCALIZE[351])</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(807.NoTopBar))">Skin.Reset(807.NoTopBar)</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + String.IsEmpty(Skin.String(808.NoTopBar))">Skin.SetString(808.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(808.NoTopBar))">Skin.Reset(808.NoTopBar)</value>
         </variable>
 	<variable name="TopBarRightLabelVar">
 		<value condition="Pvr.IsPlayingTv">$INFO[System.Date][COLOR grey2]$INFO[System.Time, | ][/COLOR][COLOR white]$INFO[PVR.EpgEventRemainingTime,   - ][/COLOR]</value>

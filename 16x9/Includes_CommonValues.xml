@@ -773,4 +773,5 @@
 	<expression name="PluginAdvancedLauncher">String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.StartsWith(Container.FolderPath,plugin://plugin.program.AML/)</expression>
 	<expression name="PluginSteamLauncher">String.StartsWith(Container.FolderPath,plugin://plugin.program.steam.library/)</expression>
 	<expression name="PluginSpecialFeatures">String.StartsWith(Container.FolderPath,plugin://plugin.video.specialfeatures/)</expression>
+	<expression name="PluginNetflix">String.StartsWith(Container.FolderPath,plugin://plugin.video.netflix/)</expression>
 </includes>

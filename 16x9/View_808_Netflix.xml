@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_808_Netflix">
+		<control type="group">
+			<visible>Control.IsVisible(808) + !Window.IsActive(skinsettings)</visible>
+			<include>ViewAnimation</include>
+			<control type="label" id="4447">
+				<description>MyFlix Open Case Movies</description>
+				<label>$LOCALIZE[31966]</label>
+				<include>HiddenObject</include>
+				<include condition="!String.IsEmpty(Skin.String(MyFlix.Delay))">MyFlixDelayAnimation</include>
+				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
+				<animation effect="fade" end="100" time="120" delay="1600">Visible</animation>
+				<visible>Control.IsVisible(808) + !ListItem.IsCollection + Container.Content(movies)</visible>
+			</control>
+			<control type="label" id="4448">
+				<description>MyFlix Open Case Sets</description>
+				<label>$LOCALIZE[31966]</label>
+				<include>HiddenObject</include>
+				<include condition="!String.IsEmpty(Skin.String(MyFlix.Delay))">MyFlixDelayAnimation</include>
+				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
+				<animation effect="fade" end="100" time="120" delay="1600">Visible</animation>
+				<visible>Control.IsVisible(808) + ListItem.IsCollection</visible>
+			</control>
+			<control type="group">
+				<animation effect="slide" start="0" end="0,60" time="0" tween="cubic" easing="inout" condition="[Container.Content(movies) + Skin.HasSetting(Enable.Netflix.Landscape)] | [Container.Content(tvshows) + Skin.HasSetting(Enable.Netflix.Landscape)] | Container.Content(genres)">Conditional</animation>
+				<control type="group">
+					<animation effect="slide" end="0,400" time="0" condition="Skin.HasSetting(Disable.MyFlixInfo)">Conditional</animation>
+					<control type="label">
+						<left>25</left>
+						<top>50</top>
+						<height>124</height>
+						<scroll>true</scroll>
+						<font>font_musicviz2</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>$EXP[PluginNetflix]</visible>
+					</control>
+				</control>
+				<control type="group">
+					<left>10</left>
+					<top>170</top>
+					<width>1000</width>
+					<height>305</height>
+					<include>VisibleFadeAnimation</include>
+					<visible>!Skin.HasSetting(Disable.MyFlixInfo)</visible>
+					<animation effect="slide" start="0" end="0,-40" time="0" tween="cubic" easing="inout" condition="Container.Content(tvshows)">Conditional</animation>
+					<control type="grouplist">
+						<top>10</top>
+						<left>170</left>
+						<orientation>horizontal</orientation>
+						<control type="image">
+							<width>65</width>
+							<height>30</height>
+							<texture colordiffuse="grey">IMDb.png</texture>
+							<visible>!String.IsEmpty(ListItem.Top250)</visible>
+						</control>
+						<control type="label">
+							<width>75</width>
+							<height>30</height>
+							<label>[B]$INFO[ListItem.Top250,#][/B]</label>
+							<font>font14</font>
+							<shadowcolor>shadow</shadowcolor>
+								<textcolor>grey</textcolor>
+							<visible>!String.IsEmpty(ListItem.Top250)</visible>
+						</control>
+					</control>
+					<control type="group">
+						<control type="grouplist">
+							<visible>Container.Content(movies) + !ListItem.IsCollection</visible>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[20339]:[/COLOR][CR]$INFO[ListItem.Director]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(ListItem.Director)</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(ListItem.Genre)</visible>
+							</control>
+							<control type="label">
+								<label>$INFO[ListItem.Duration(mins),,m]$INFO[ListItem.Endtime, • $LOCALIZE[19127]: ,]</label>
+								<width>1000</width>
+								<height>45</height>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!Skin.HasSetting(Enable.HourMinuteDuration)</visible>
+							</control>
+							<control type="label">
+								<label>$VAR[ItemDurationVar]$INFO[ListItem.Endtime, • $LOCALIZE[31393]: ,]</label>
+								<width>1000</width>
+								<height>45</height>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>Skin.HasSetting(Enable.HourMinuteDuration)</visible>
+							</control>
+						</control>
+						<control type="grouplist">
+							<visible>ListItem.IsCollection + [Container.Content(movies) | Container.Content(sets)]</visible>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[20339]:[/COLOR][CR]$INFO[Window(Home).Property(Set.Movies.Director)]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(Window(Home).Property(Set.Movies.Director))</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[515]:[/COLOR][CR]$INFO[Window(Home).Property(Set.Movies.Genre)]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(Window(Home).Property(Set.Movies.Genre))</visible>
+							</control>
+						</control>
+						<control type="grouplist">
+							<top>50</top>
+							<visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[126]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.Status)]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(Window(Home).Property(NextAired.Status))</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[31010]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[31011]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>Container.Content(tvshows) + !String.IsEmpty(Window(Home).Property(NextAired.LatestDate)) + String.IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(ListItem.Genre)</visible>
+							</control>
+						</control>
+						<control type="grouplist">
+							<visible>Container.Content(episodes)</visible>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[20359]:[/COLOR][CR]$VAR[FloorLabelVar]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[126]: [/COLOR]$INFO[Window(Home).Property(NextAired.Status)]</label>
+								<height>45</height>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Status))</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[20416]: [/COLOR]$INFO[ListItem.Premiered]</label>
+								<height>45</height>
+								<width>650</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(ListItem.Premiered)</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[31010]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[31011]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>>
+								<width>800</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestDate)) + String.IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+							</control>
+							<control type="label">
+								<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[2050]: [/COLOR]$INFO[ListItem.Duration(mins),, $LOCALIZE[12391]]</label>
+								<height>45</height>
+								<width>650</width>
+								<textcolor>grey</textcolor>
+								<include>DefaultButtonsValues</include>
+								<visible>!String.IsEmpty(ListItem.Duration)</visible>
+							</control>
+						</control>
+						<control type="textbox">
+							<top>240</top>
+							<left>15</left>
+							<label>[COLOR $VAR[ThemeLabelColor]]$INFO[ListItem.Tagline,, - ][/COLOR]$VAR[VideoPlotVar]</label>
+							<width>800</width>
+							<height>190</height>
+							<font>font15</font>
+							<textcolor>grey</textcolor>
+							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout" condition="!String.IsEmpty(Window(Home).Property(NextAired.Status))">Conditional</animation>
+							<visible></visible>
+						</control>
+					</control>
+				</control>
+			</control>
+ 			<control type="list" id="808">
+				<top>0</top>
+				<width>1700</width>
+				<height>400</height>
+				<visible>$EXP[PluginNetflix]</visible>
+				<onleft>808</onleft>
+				<onright>808</onright>
+				<onup>SetProperty(MediaMenu,True,Home)</onup>
+				<onup>SetFocus(9050)</onup>
+				<ondown condition="!Control.IsVisible(80860)">4400</ondown>
+				<viewtype label="$LOCALIZE[32004]">bigwrap</viewtype>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="300" width="300" condition="!Skin.HasSetting(Enable.Netflix.Landscape)">
+					<include>FlixPoster</include>
+					<include>FlixPosterOverlay</include>
+					<control type="image">
+						<left>10</left>
+						<top>75</top>
+						<width>300</width>
+						<height>300</height>
+						<texture border="1">black.png</texture>
+						<colordiffuse>$VAR[MyFlixDimmerVar]</colordiffuse>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">
+						<include>FlixCaseVars</include>
+						<texture background="true">$VAR[CaseTypePathVar]$VAR[GlobalCaseVar]</texture>
+					</control>
+					<include>FlixPosterReflection</include>
+					<include>FlixPosterCaseReflection</include>
+				</itemlayout>
+				<focusedlayout height="300" width="300" condition="!Skin.HasSetting(Enable.Netflix.Landscape)">
+					<control type="group">
+						<visible>$EXP[PluginNetflix]</visible>
+						<include>FlixPoster</include>
+						<control type="image">
+							<include>FlixCaseVars</include>
+							<texture background="true">$VAR[CaseTypePathVar]$VAR[GlobalCaseVar]</texture>
+						</control>
+						<include>FlixPosterOverlay</include>
+						<include>FlixPosterReflection</include>
+						<include>FlixPosterCaseReflection</include>
+					</control>
+				</focusedlayout>
+				<itemlayout height="270" width="480" condition="Skin.HasSetting(Enable.Netflix.Landscape)">
+					<include>FlixLandscape</include>
+					<control type="image">
+						<left>398</left>
+						<top>217</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>$VAR[OverlayVar]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+					</control>
+					<control type="image">
+						<left>-10</left>
+						<top>197</top>
+						<width>480</width>
+						<height>270</height>
+						<texture border="1">black.png</texture>
+						<colordiffuse>$VAR[MyFlixDimmerVar]</colordiffuse>
+						<bordersize>20</bordersize>
+					</control>
+					<include>FlixLandscapeReflection</include>
+				</itemlayout>
+				<focusedlayout height="270" width="480" condition="Skin.HasSetting(Enable.Netflix.Landscape)">
+					<include>FlixLandscape</include>
+					<control type="image">
+						<left>398</left>
+						<top>217</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>$VAR[OverlayVar]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+					</control>
+					<include>FlixLandscapeReflection</include>
+				</focusedlayout>
+				<itemlayout height="270" width="480" condition="Container.Content(episodes)">
+					<include>FlixEpisodeThumb</include>
+					<control type="image">
+						<left>398</left>
+						<top>217</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>$VAR[OverlayVar]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>!String.IsEmpty(Skin.String(808.Episodes.DisableOverlay)) + Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<top>197</top>
+						<width>480</width>
+						<height>270</height>
+						<texture border="1">black.png</texture>
+						<colordiffuse>$VAR[MyFlixDimmerVar]</colordiffuse>
+						<bordersize>20</bordersize>
+					</control>
+					<include>FlixEpisodeThumbReflection</include>
+				</itemlayout>
+				<focusedlayout height="270" width="480" condition="Container.Content(episodes)">
+					<include>FlixEpisodeThumb</include>
+					<control type="image">
+						<left>398</left>
+						<top>217</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>$VAR[OverlayVar]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>!String.IsEmpty(Skin.String(808.Episodes.DisableOverlay)) + Container.Content(episodes)</visible>
+					</control>
+					<include>FlixEpisodeThumbReflection</include>
+				</focusedlayout>
+			</control>
+            <control type="list" id="8081">
+                <top>200</top>
+				<width>1700</width>
+				<height>400</height>
+				<visible>$EXP[PluginNetflix]</visible>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+                <itemlayout height="300" width="300" condition="!Skin.HasSetting(Enable.Netflix.Landscape)">
+					<include>FlixPoster</include>
+					<include>FlixPosterOverlay</include>
+					<control type="image">
+						<left>10</left>
+						<top>175</top>
+						<width>300</width>
+						<height>300</height>
+						<texture border="1">black.png</texture>
+						<colordiffuse>$VAR[MyFlixDimmerVar]</colordiffuse>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">
+						<include>FlixCaseVars</include>
+						<texture background="true">$VAR[CaseTypePathVar]$VAR[GlobalCaseVar]</texture>
+					</control>
+					<include>FlixPosterReflection</include>
+					<include>FlixPosterCaseReflection</include>
+				</itemlayout>
+				<focusedlayout height="300" width="300" condition="!Skin.HasSetting(Enable.Netflix.Landscape)">
+					<control type="group">
+						<visible>$EXP[PluginNetflix]</visible>
+						<include>FlixPoster</include>
+						<control type="image">
+							<include>FlixCaseVars</include>
+							<texture background="true">$VAR[CaseTypePathVar]$VAR[GlobalCaseVar]</texture>
+						</control>
+						<include>FlixPosterOverlay</include>
+						<include>FlixPosterReflection</include>
+						<include>FlixPosterCaseReflection</include>
+					</control>
+				</focusedlayout>
+                <content>$INFO[Container(808).ListItem(Label)]</content>
+            </control>
+		</control>
+	</include>
+	<include name="FlixPoster">
+		<control type="image">
+			<left>10</left>
+			<top>75</top>
+			<width>268</width>
+			<height>390</height>
+			<texture background="true">$VAR[PosterThumbVar]</texture>
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="FlixPosterOverlay">
+		<control type="image">
+			<left>206</left>
+			<top>95</top>
+			<width>60</width>
+			<height>60</height>
+			<texture>$VAR[OverlayVar]</texture>
+			<aspectratio align="center" aligny="top">keep</aspectratio>
+			<visible>[!String.IsEmpty(Skin.String(808.Movies.DisableOverlay)) + Container.Content(movies)] | [!String.IsEmpty(Skin.String(808.Sets.DisableOverlay)) + Container.Content(sets)] | [!String.IsEmpty(Skin.String(808.TV.DisableOverlay)) + Container.Content(tvshows)]</visible>
+		</control>
+	</include>
+	<include name="FlixPosterReflection">
+		<control type="image">
+			<left>29</left>
+			<top>465</top>
+			<width>228</width>
+			<height>402</height>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_reflect.png">$VAR[PosterThumbVar]</texture>
+		</control>
+	</include>
+	<include name="FlixLandscape">
+		<control type="image">
+			<left>-10</left>
+			<top>197</top>
+			<width>480</width>
+			<height>270</height>
+			<texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem0Var]</texture>
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="FlixLandscapeReflection">
+		<control type="image">
+			<left>10</left>
+			<top>465</top>
+			<width>440</width>
+			<height>270</height>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem0Var]</texture>
+		</control>
+	</include>
+	<include name="FlixEpisodeThumb">
+		<control type="image">
+			<top>197</top>
+			<width>480</width>
+			<height>270</height>
+			<texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[NoSpoilerIconVar]</texture>
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="FlixEpisodeThumbReflection">
+		<control type="image">
+			<top>197</top>
+			<width>480</width>
+			<height>270</height>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$INFO[ListItem.Art(thumb)]</texture>
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+		</control>
+	</include>
+	<include name="FlixCaseVars">
+		<left>-16</left>
+		<top>60</top>
+		<width>292</width>
+		<height>408</height>
+		<visible>Skin.HasSetting(Enable.MyFlix.Cases) + [Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+	</include>
+	<include name="FlixPosterCaseReflection">
+		<control type="image">
+			<left>-18</left>
+			<top>442</top>
+			<width>295</width>
+			<height>410</height>
+			<colordiffuse>d1FFFFFF</colordiffuse>
+			<texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[CaseTypePathVar]$VAR[GlobalCaseVar]</texture>
+			<visible>Skin.HasSetting(Enable.MyFlix.Cases) + [Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+		</control>
+	</include>
+</includes>

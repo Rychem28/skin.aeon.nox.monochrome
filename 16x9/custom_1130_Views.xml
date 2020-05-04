@@ -277,7 +277,7 @@
 							<label>$LOCALIZE[31998]</label>
 							<onclick>Container.SetViewMode(803)</onclick>
 							<visible>Window.IsActive(programs)</visible>
-							<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Disable.GameFlixView)</visible>
+							<visible>[$EXP[PluginAdvancedLauncher] | $EXP[PluginSteamLauncher]]+ !Skin.HasSetting(Disable.GameFlixView)</visible>
 						</item>
 						<item>
 							<label>$LOCALIZE[31996]</label>
@@ -302,6 +302,12 @@
 							<onclick>Container.SetViewMode(807)</onclick>
 							<visible>Window.IsActive(videos)</visible>
 							<visible>Container.Content(movies) + !Skin.HasSetting(Disable.SpecialFeaturesView) + !String.IsEmpty(Window(home).Property(SpecialFeatures.Path))</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[32004]</label>
+							<onclick>Container.SetViewMode(808)</onclick>
+							<visible>Window.IsActive(videos)</visible>
+							<visible>$EXP[PluginNetflix]</visible>
 						</item>						
 					</content>
 				</control>

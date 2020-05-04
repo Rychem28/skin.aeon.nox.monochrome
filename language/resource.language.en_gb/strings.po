@@ -3065,6 +3065,10 @@ msgctxt "#32003"
 msgid "Special Features"
 msgstr "Special Features"
 
+msgctxt "#32004"
+msgid "Netflix"
+msgstr "Netflix"
+
 #Name of colour new colour theme
 msgctxt "#32006"
 msgid "Aeon Nox Monochrome"
@@ -3173,3 +3177,11 @@ msgstr "Display Coloured Game Logo (Consoles)"
 msgctxt "#32045"
 msgid "Enable Game Trailers"
 msgstr "Enable Game Trailers"
+
+msgctxt "#32046"
+msgid "Show Home Buttons"
+msgstr "Show Home Buttons"
+
+msgctxt "#32047"
+msgid "Show selected buttons on the home page for power/settings/addons"
+msgstr "Show selected buttons on the home page for power/settings/addons"

@@ -964,6 +964,12 @@
 			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixTrailer)</selected>
 		</control>
+		<control type="radiobutton" id="1516">
+			<include>ButtonCommonValues</include>
+			<label>Enable WideView</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixWide)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixWide)</selected>
+		</control>		
 	</include>
 	<include name="MusicFlixViewSettings">
 		<!-- MusicFlix -->
@@ -1058,7 +1064,16 @@
 			<onclick>Skin.ToggleSetting(Enable.PictureFlixInfo)</onclick>
 			<selected>Skin.HasSetting(Enable.PictureFlixInfo)</selected>
 		</control>
-	</include>	
+	</include>
+	<include name="NetflixViewSettings">
+		<!-- Netflix -->
+		<control type="radiobutton" id="1510">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[31076]</label>
+			<onclick>Skin.ToggleSetting(Enable.Netflix.Landscape)</onclick>
+			<selected>Skin.HasSetting(Enable.Netflix.Landscape)</selected>
+		</control>
+	</include>    
 	<include name="ReloadWindowOnClick">
 		<onclick condition="Window.IsActive(addonbrowser)">SetProperty(ActiveWindow,addons,home)</onclick>
 		<onclick condition="Window.IsActive(music)">SetProperty(ActiveWindow,music,home)</onclick>

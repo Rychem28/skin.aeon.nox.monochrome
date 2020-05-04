@@ -119,81 +119,82 @@
 					<shadowcolor>shadow</shadowcolor>
 				</control>
 				<!-- Control Buttons -->
-				<control type="button" id="1">
-					<description>Power Button</description>
+				<control type="group">
 					<left>25</left>
 					<top>165</top>
-					<width>150</width>
-					<height>150</height>
-					<visible>true</visible>
-					<aspectratio>keep</aspectratio>
-					<texturefocus colordiffuse="$VAR[HomeButtonColor]">power_fo.png</texturefocus>
-					<texturenofocus></texturenofocus>
-					<onclick>Quit()</onclick>
-					<onfocus>-</onfocus>
-					<onunfocus>-</onunfocus>
-					<onup>9010</onup>
-					<ondown>9000</ondown>
-					<onleft>3</onleft>
-					<onright>2</onright>
-			    </control>
-				<control type="image"> <!-- static power button image, used to display the outer glow properly -->
-					<left>25</left>
-					<top>165</top>
-					<width>150</width>
-					<height>150</height>
-					<texture>power_nf.png</texture>
-				</control>
-				<control type="button" id="2">
-					<description>Settings Button</description>
-					<left>180</left>
-					<top>235</top>
-					<width>75</width>
-					<height>75</height>
-					<visible>true</visible>
-					<texturefocus colordiffuse="$VAR[HomeButtonColor]">setting_fo.png</texturefocus>
-					<texturenofocus></texturenofocus>
-					<onclick>ActivateWindow(settings)</onclick>
-					<onfocus>-</onfocus>
-					<onunfocus>-</onunfocus>
-					<onup>9010</onup>
-					<ondown>9000</ondown>
-					<onleft>1</onleft>
-					<onright>3</onright>
-				</control>
-				<control type="image"> <!-- static button image, used to display the outer glow properly -->
-					<left>180</left>
-					<top>235</top>
-					<width>75</width>
-					<height>75</height>
-					<texture>setting_nf.png</texture>
-					<visible>Control.HasFocus(2)</visible>
-				</control>
-				<control type="button" id="3">
-					<description>Addon Button</description>
-					<left>180</left>
-					<top>235</top>
-					<width>75</width>
-					<height>75</height>
-					<visible>true</visible>
-					<texturefocus colordiffuse="$VAR[HomeButtonColor]">addons_fo.png</texturefocus>
-					<texturenofocus></texturenofocus>
-					<onclick>ActivateWindow(AddonBrowser)</onclick>
-					<onfocus>-</onfocus>
-					<onunfocus>-</onunfocus>
-					<onup>9010</onup>
-					<ondown>9000</ondown>
-					<onleft>2</onleft>
-					<onright>1</onright>
-				</control>
-				<control type="image"> <!-- static button image, used to display the outer glow properly -->
-					<left>180</left>
-					<top>235</top>
-					<width>75</width>
-					<height>75</height>
-					<texture>addons_nf.png</texture>
-					<visible>Control.HasFocus(3)</visible>
-				</control>				
+					<visible>!Skin.HasSetting(Disable.ShowHomeButtons)</visible>
+					<control type="button" id="1">
+						<description>Power Button</description>
+						<width>150</width>
+						<height>150</height>
+						<visible>true</visible>
+						<aspectratio>keep</aspectratio>
+						<texturefocus colordiffuse="$VAR[HomeButtonColor]">power_fo.png</texturefocus>
+						<texturenofocus></texturenofocus>
+						<onclick>Quit()</onclick>
+						<onfocus>-</onfocus>
+						<onunfocus>-</onunfocus>
+						<onup>9010</onup>
+						<ondown>9000</ondown>
+						<onleft>3</onleft>
+						<onright>2</onright>
+					</control>
+					<control type="image"> <!-- static power button image, used to display the outer glow properly -->
+						<width>150</width>
+						<height>150</height>
+						<texture>power_nf.png</texture>
+					</control>
+					<control type="button" id="2">
+						<description>Settings Button</description>
+						<left>155</left>
+						<top>70</top>
+						<width>75</width>
+						<height>75</height>
+						<visible>true</visible>
+						<texturefocus colordiffuse="$VAR[HomeButtonColor]">setting_fo.png</texturefocus>
+						<texturenofocus></texturenofocus>
+						<onclick>ActivateWindow(settings)</onclick>
+						<onfocus>-</onfocus>
+						<onunfocus>-</onunfocus>
+						<onup>9010</onup>
+						<ondown>9000</ondown>
+						<onleft>1</onleft>
+						<onright>3</onright>
+					</control>
+					<control type="image"> <!-- static button image, used to display the outer glow properly -->
+						<left>155</left>
+						<top>70</top>
+						<width>75</width>
+						<height>75</height>
+						<texture>setting_nf.png</texture>
+						<visible>Control.HasFocus(2)</visible>
+					</control>
+					<control type="button" id="3">
+						<description>Addon Button</description>
+						<left>155</left>
+						<top>70</top>
+						<width>75</width>
+						<height>75</height>
+						<visible>true</visible>
+						<texturefocus colordiffuse="$VAR[HomeButtonColor]">addons_fo.png</texturefocus>
+						<texturenofocus></texturenofocus>
+						<onclick>ActivateWindow(AddonBrowser)</onclick>
+						<onfocus>-</onfocus>
+						<onunfocus>-</onunfocus>
+						<onup>9010</onup>
+						<ondown>9000</ondown>
+						<onleft>2</onleft>
+						<onright>1</onright>
+					</control>
+					<control type="image"> <!-- static button image, used to display the outer glow properly -->
+						<left>155</left>
+						<top>70</top>
+						<width>75</width>
+						<height>75</height>
+						<texture>addons_nf.png</texture>
+						<visible>Control.HasFocus(3)</visible>
+					</control>
+				</control>	
 				<control type="grouplist" id="9020">
 					<visible>!String.IsEmpty(Container(9000).ListItem.Property(InfoLine)) | !Skin.HasSetting(CenteredInfoLine)</visible>
 					<left>1100</left>
