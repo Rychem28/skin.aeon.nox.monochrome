@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
-	<views>50,51,52,53,55,56,57,58,59,499,500,501,502,503,504,505,506,507,509,591,592,601,602,609,807,808</views>
+	<views>50,51,52,53,55,56,57,58,59,499,500,501,502,503,504,505,506,507,509,591,592,601,602,609,808,809</views>
 	<menucontrol>9051</menucontrol>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(Disable.NextAired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload>SetProperty(Window.HasSettings,True,Home)</onload>
@@ -194,9 +194,9 @@
 			<!-- view id = 602 -->
 			<include condition="!Skin.HasSetting(Disable.FullscreenWallView)">View_609_Fullscreen_Wall</include>
 			<!-- view id = 609 -->
-			<include condition="!Skin.HasSetting(Disable.SpecialFeaturesView)">View_807_SpecialFeatures</include>
+			<include condition="!Skin.HasSetting(Disable.SpecialFeaturesView)">View_808_SpecialFeatures</include>
 			<!-- view id = 807 -->
-			<include>View_808_Netflix</include>
+			<include>View_809_Netflix</include>
 			<!-- view id = 808-->				
 		</control>
 		<control type="group">

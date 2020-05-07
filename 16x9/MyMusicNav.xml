@@ -6,7 +6,7 @@
     <onload>Skin.SetBool(SkinHelper.EnableMusicArt)</onload> 	
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
-	<views>50,51,52,54,55,57,59,500,501,503,506,609,507,508,592,603,804,805</views>
+	<views>50,51,52,54,55,57,59,500,501,503,506,609,507,508,592,603,805,806</views>
 	<menucontrol>9051</menucontrol>
 	<controls>
 		<control type="button" id="4400">
@@ -214,10 +214,10 @@
 			<!-- view id = 609 -->
 			<include>Music_JukeBox</include>
 			<!-- view id = 603 -->
-			<include condition="!Skin.HasSetting(Disable.MusicFlixView)">View_804_MusicFlix</include>
-			<!-- view id = 804 -->
-			<include condition="!Skin.HasSetting(Disable.MusicRightListView)">View_805_MusicRightList</include>
-			<!-- view id = 805 -->			
+			<include condition="!Skin.HasSetting(Disable.MusicFlixView)">View_805_MusicFlix</include>
+			<!-- view id = 805 -->
+			<include condition="!Skin.HasSetting(Disable.MusicRightListView)">View_806_MusicRightList</include>
+			<!-- view id = 806 -->			
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(54) | Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(57)</visible>
@@ -328,8 +328,8 @@
 				</control>
 			</control>
 		</control>
-		<control type="group"> <!-- Bottom display for 804 MusicFlix-->
-			<visible>Control.IsVisible(804) + Container.Content(albums)</visible>
+		<control type="group"> <!-- Bottom display for 805 MusicFlix-->
+			<visible>Control.IsVisible(805) + Container.Content(albums)</visible>
 			<!-- Scrollbars -->
 			<include>BottomScrollbars</include>
 			<visible>!Window.IsActive(addoninformation)</visible>
@@ -339,7 +339,7 @@
 			<top>970</top>
 			<left>30</left>
 			<control type=group>
-				<visible>Control.IsVisible(804)</visible>
+				<visible>Control.IsVisible(805)</visible>
 				<control type="group"> <!-- label display, text if image doesn't work -->
 					<width>198</width>
 					<visible>!String.IsEmpty(ListItem.Property(Album_Label))</visible>
@@ -462,7 +462,7 @@
                         <fadetime>50</fadetime>
                         <include>MediaFlagValues</include>
                         <texture>flags/rating/empty.png</texture>
-                        <visible>String.IsEmpty(ListItem.Rating) + Control.IsVisible(804)</visible>
+                        <visible>String.IsEmpty(ListItem.Rating) + Control.IsVisible(805)</visible>
                     </control>                    
 					<control type="image">
 						<colordiffuse>$VAR[RatingStarColor]</colordiffuse>
@@ -602,7 +602,7 @@
 			<animation effect="slide" start="0" end="0,200" time="1" condition="Control.IsVisible(59)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-200" time="1" condition="Control.IsVisible(505)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,155" time="1" condition="Control.IsVisible(506)">Conditional</animation>
-			<animation effect="slide" start="0" end="0,155" time="1" condition="Control.IsVisible(804)">Conditional</animation>	
+			<animation effect="slide" start="0" end="0,155" time="1" condition="Control.IsVisible(805)">Conditional</animation>	
 			<control type="button" id="615">
 				<description>Go to Letter</description>
 				<include>HiddenObject</include>

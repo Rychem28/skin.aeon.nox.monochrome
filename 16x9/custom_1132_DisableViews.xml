@@ -253,6 +253,15 @@
 					<onclick>Skin.ToggleSetting(Disable.GameFlixView)</onclick>
 					<selected>!Skin.HasSetting(Disable.GameFlixView)</selected>
 				</control>
+				<control type="radiobutton" id="1642">
+					<description>Disable GameFlixWide</description>
+					<textwidth>375</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[32005]</label>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.GameFlixWideView)</onclick>
+					<selected>!Skin.HasSetting(Disable.GameFlixWideView)</selected>
+				</control> 				
 				<control type="radiobutton" id="1637">
 					<description>Disable MusicFlix</description>
 					<textwidth>375</textwidth>

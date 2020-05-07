@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<include>DialogOpenCloseAnimation</include>
+	<onload>SetFocus(2)</onload>
 	<controls>
 		<control type="grouplist" id="9000">
 			<left>705</left>

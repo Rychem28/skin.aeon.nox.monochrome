@@ -1978,11 +1978,12 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MyFlix) + !String.IsEmpty(Skin.String(509.NoTopBar))">$INFO[Skin.String(509.NoTopBar)]</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicJukebox) + !String.IsEmpty(Skin.String(603.NoTopBar))">$INFO[Skin.String(603.NoTopBar)]</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix) + !String.IsEmpty(Skin.String(803.NoTopBar))">$INFO[Skin.String(803.NoTopBar)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(804.NoTopBar))">$INFO[Skin.String(804.NoTopBar)]</value>		
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(805.NoTopBar))">$INFO[Skin.String(805.NoTopBar)]</value>	
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(806.NoTopBar))">$INFO[Skin.String(806.NoTopBar)]</value>		
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(807.NoTopBar))">$INFO[Skin.String(807.NoTopBar)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(808.NoTopBar))">$INFO[Skin.String(808.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide) + !String.IsEmpty(Skin.String(804.NoTopBar))">$INFO[Skin.String(804.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(805.NoTopBar))">$INFO[Skin.String(805.NoTopBar)]</value>		
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(806.NoTopBar))">$INFO[Skin.String(806.NoTopBar)]</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(807.NoTopBar))">$INFO[Skin.String(807.NoTopBar)]</value>		
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(808.NoTopBar))">$INFO[Skin.String(808.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(809.NoTopBar))">$INFO[Skin.String(809.NoTopBar)]</value>
 		<value>$LOCALIZE[16041]</value>
 	</variable>
 	<variable name="NoTopBarOnClickVar">
@@ -2042,16 +2043,18 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicJukeBox) + !String.IsEmpty(Skin.String(603.NoTopBar))">Skin.Reset(603.NoTopBar)</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix) + String.IsEmpty(Skin.String(803.NoTopBar))">Skin.SetString(803.NoTopBar,$LOCALIZE[351])</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix) + !String.IsEmpty(Skin.String(803.NoTopBar))">Skin.Reset(803.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + String.IsEmpty(Skin.String(804.NoTopBar))">Skin.SetString(804.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(804.NoTopBar))">Skin.Reset(804.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + String.IsEmpty(Skin.String(805.NoTopBar))">Skin.SetString(805.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(805.NoTopBar))">Skin.Reset(805.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + String.IsEmpty(Skin.String(806.NoTopBar))">Skin.SetString(806.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(806.NoTopBar))">Skin.Reset(806.NoTopBar)</value>	
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + String.IsEmpty(Skin.String(807.NoTopBar))">Skin.SetString(807.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(807.NoTopBar))">Skin.Reset(807.NoTopBar)</value>	
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + String.IsEmpty(Skin.String(808.NoTopBar))">Skin.SetString(808.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(808.NoTopBar))">Skin.Reset(808.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide) + String.IsEmpty(Skin.String(804.NoTopBar))">Skin.SetString(804.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide) + !String.IsEmpty(Skin.String(804.NoTopBar))">Skin.Reset(804.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + String.IsEmpty(Skin.String(805.NoTopBar))">Skin.SetString(805.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(805.NoTopBar))">Skin.Reset(805.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + String.IsEmpty(Skin.String(806.NoTopBar))">Skin.SetString(806.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(806.NoTopBar))">Skin.Reset(806.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + String.IsEmpty(Skin.String(807.NoTopBar))">Skin.SetString(807.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(807.NoTopBar))">Skin.Reset(807.NoTopBar)</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + String.IsEmpty(Skin.String(808.NoTopBar))">Skin.SetString(808.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(808.NoTopBar))">Skin.Reset(808.NoTopBar)</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + String.IsEmpty(Skin.String(809.NoTopBar))">Skin.SetString(809.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(809.NoTopBar))">Skin.Reset(809.NoTopBar)</value>
         </variable>
 	<variable name="TopBarRightLabelVar">
 		<value condition="Pvr.IsPlayingTv">$INFO[System.Date][COLOR grey2]$INFO[System.Time, | ][/COLOR][COLOR white]$INFO[PVR.EpgEventRemainingTime,   - ][/COLOR]</value>
@@ -2254,20 +2257,20 @@
 		<value condition="Window.IsActive(pictures) + !String.IsEmpty(ListItem.PictureDate)">FFFFFFFF</value>
 		<value condition="Window.IsActive(weather)">$VAR[WeatherBackgroundColor]</value>		
 		<value condition="!String.Contains(Container.ListItem.Property(background),colourbackgrounds) + [Window.IsActive(home) | Control.HasFocus(1) | Control.HasFocus(2) | Control.HasFocus(3)]">$VAR[SkinBackgroundColor]</value>
-		<value condition="Control.IsVisible(805) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$VAR[MusicRightListDimmerVar]</value>
-		<value condition="Control.IsVisible(805) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
-		<value condition="Control.IsVisible(805) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[SkinBackgroundColor]</value>
-		<value condition="Control.IsVisible(805) + !Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
-		<value condition="Control.IsVisible(805) + !Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
+		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$VAR[MusicRightListDimmerVar]</value>
+		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
+		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[SkinBackgroundColor]</value>
+		<value condition="Control.IsVisible(806) + !Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
+		<value condition="Control.IsVisible(806) + !Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
 		<value condition="!Window.IsActive(home) + String.IsEmpty(ListItem.Art(fanart))">$VAR[SkinBackgroundColor]</value>
-		<value condition="Control.IsVisible(805) + !Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
+		<value condition="Control.IsVisible(806) + !Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
 		<value condition="String.IsEmpty(Listitem.Art(fanart)) + !Window.IsActive(home) + [String.IsEqual(Skin.String(Viz.Background),5) | String.IsEqual(Skin.String(Viz.Background),6)]">$VAR[SkinBackgroundColor]</value>
 		<value>FFFFFFFF</value>
 	</variable>
 	<!-- Multiview Backgrounds -->
 	<variable name="BackGroundImageVar">
-		<value condition="Control.IsVisible(805) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$INFO[ListItem.Art(albumartist.clearlogo)]</value>
-		<value condition="Control.IsVisible(805) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$INFO[ListItem.Art(albumartist.fanart)]</value>
+		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$INFO[ListItem.Art(albumartist.clearlogo)]</value>
+		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$INFO[ListItem.Art(albumartist.fanart)]</value>
 		<value>$VAR[GlobalBackgroundVar]</value>
 	</variable>
 	<!-- Fallback View Variables -->

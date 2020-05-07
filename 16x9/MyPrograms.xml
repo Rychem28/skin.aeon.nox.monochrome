@@ -6,7 +6,7 @@
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<onunload>ClearProperty(Progams.Games,Home)</onunload>
-	<views>50,501,51,54,55,57,500,503,803</views>
+	<views>50,501,51,54,55,57,500,503,803,804</views>
 	<menucontrol>9051</menucontrol>
 	<controls>
 		<control type="button" id="4400">
@@ -46,8 +46,10 @@
 			<!-- view id = 501 -->
 			<include condition="!Skin.HasSetting(Disable.WallView)">View_503_Wall</include>
 			<!-- view id = 503 -->
-			<include condition="!Skin.HasSetting(Disable.MyFlixGamesSquare)">View_803_GameFlix</include>
-			<!-- view id = 803 -->			
+			<include condition="!Skin.HasSetting(Disable.GamFlixView)">View_803_GameFlix</include>
+			<!-- view id = 803 -->
+			<include condition="!Skin.HasSetting(Disable.GameFlixWideView)">View_804_GameFlixWide</include>
+			<!-- view id = 804 -->	
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(54) | Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
@@ -193,7 +195,7 @@
 		</control>
 		<control type="group"> <!--bottom infos for AML/Steam PLugins -->
 			<include>BottomScrollbars</include>
-			<visible>Control.IsVisible(803)</visible>
+			<visible>Control.IsVisible(803) | Control.IsVisible(804)</visible>
 			<top>950</top>
 			<left>30</left>
 			<control type="group"> <!-- label display, text if image doesn't work -->
@@ -268,7 +270,7 @@
 			</control>
             <control type="group"> <!-- star rating -->
                 <left>1310</left>
-                <visible>Control.IsVisible(803) + !String.IsEmpty(ListItem.Title)</visible>
+                <visible>[Control.IsVisible(803) | Control.IsVisible(804)] + !String.IsEmpty(ListItem.Title)</visible>
                 <control type="image">
                     <colordiffuse>$VAR[RatingStarBackgroundColor]</colordiffuse>
                     <width>200</width>

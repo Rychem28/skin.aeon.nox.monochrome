@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-	<include name="View_803_GameFlix">
+	<include name="View_804_GameFlixWide">
 		<control type="group">
-			<visible>Control.IsVisible(803) + !Window.IsActive(skinsettings)</visible>
+			<visible>Control.IsVisible(804) + !Window.IsActive(skinsettings)</visible>
 			<include>ViewAnimation</include>
 			<control type="group">
 				<animation effect="slide" start="0" end="0,60" time="0" tween="cubic" easing="inout">Conditional</animation>
@@ -44,7 +44,7 @@
 							<left>15</left>
 							<label>$INFO[ListItem.Plot]</label>
 							<width>800</width>
-							<height>280</height>
+							<height>350</height>
 							<font>font15</font>
 							<textcolor>grey</textcolor>
 							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
@@ -56,7 +56,7 @@
 							<left>1215</left>
 							<label>$INFO[ListItem.Plot]</label>
 							<width>800</width>
-							<height>280</height>
+							<height>350</height>
 							<font>font15</font>
 							<textcolor>grey</textcolor>
 							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
@@ -68,7 +68,7 @@
 							<left>15</left>
 							<label>$INFO[ListItem.Property(history)]</label>
 							<width>800</width>
-							<height>280</height>
+							<height>350</height>
 							<font>font15</font>
 							<textcolor>grey</textcolor>
 							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
@@ -90,82 +90,45 @@
 						<visible>Skin.HasSetting(Enable.GameFlixBoxFront)</visible>
 					</control>
                 </control>
-				<control type="fixedlist" id="803">
+				<control type="fixedlist" id="804">
 					<top>490</top>
 					<width>1920</width>
 					<height>600</height>
 					<visible>true</visible>
-					<onleft>803</onleft>
-					<onright>803</onright>
+					<onleft>804</onleft>
+					<onright>804</onright>
 					<onup>SetProperty(MediaMenu,True,Home)</onup>
 					<onup>SetFocus(9050)</onup>
-					<ondown condition="Control.IsVisible(80360)">80360</ondown>
-					<ondown condition="!Control.IsVisible(80360)">4400</ondown>
-					<viewtype label="$LOCALIZE[31998]">bigwrap</viewtype>
-					<pagecontrol>80360</pagecontrol>
+					<ondown condition="Control.IsVisible(80460)">80460</ondown>
+					<ondown condition="!Control.IsVisible(80460)">4400</ondown>
+					<viewtype label="$LOCALIZE[32005]">bigwrap</viewtype>
+					<pagecontrol>80460</pagecontrol>
 					<orientation>horizontal</orientation>
 					<preloaditems>2</preloaditems>
 					<focusposition>0</focusposition>
-					<itemlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="auto" width="390">
+					<itemlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="300" width="400">
 						<control type="group">
-							<include>GameFlixPoster</include>
-							<include>GameFlixPosterReflection</include>
+							<include>GameFlixPosterWide</include>
+							<include>GameFlixPosterReflectionWide</include>
 							<control type="image">
 								<left>10</left>
-								<top>75</top>
-								<width>390</width>
-								<height>390</height>
+								<top>165</top>
+								<width>400</width>
+								<height>300</height>
 								<texture border="1">black.png</texture>
 								<colordiffuse>$VAR[GameFlixDimmerVar]</colordiffuse>
 								<bordersize>20</bordersize>
 							</control>
 						</control>	
 					</itemlayout>
-					<focusedlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="390" width="390">
+					<focusedlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="300" width="400">
 						<control type="group">
-							<include>GameFlixPoster</include>
-							<include>GameFlixPosterReflection</include>
-							<!-- Trailer Trigger - place holder moved to My Programs
-							<control type="button">
-								<left>0</left>
-								<top>0</top>
-								<width>1</width>
-								<height>1</height>
-								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)">PlayMedia($INFO[ListItem.trailer],1)</onfocus>
-								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)">PlayerControl(RepeatOff)</onfocus>
-								<!-- <onfocus condition="!Player.Muted"></onfocus>
-								<onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
-								<!-- <onunfocus>Action(Mute)</onunfocus> 
-								<texturefocus>-</texturefocus>
-								<texturenofocus>-</texturenofocus>
-								<animation type="Focus">
-								<effect type="fade" delay="250" start="0" end="100" />
-								</animation>
-							</control>-->
+							<include>GameFlixPosterWide</include>
+							<include>GameFlixPosterReflectionWide</include>
 						</control>
-					</focusedlayout>
+					</focusedlayout>					
 				</control>
 			</control>
-		</control>
-	</include>
-	<include name="GameFlixPoster">
-		<control type="image">
-			<left>10</left>
-			<top>75</top>
-			<width>390</width>
-			<height>390</height>
-			<texture background="true">$INFO[Listitem.Icon]</texture> <!-- configurable image in add-on -->
-			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
-			<bordersize>20</bordersize>
-		</control>
-	</include>
-	<include name="GameFlixPosterReflection">
-		<control type="image">
-			<left>29</left>
-			<top>465</top>
-			<width>350</width>
-			<height>402</height>
-			<texture background="true" flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[Listitem.Icon]</texture>
 		</control>
 	</include>
 	<include name="GameFlixPosterWide">
