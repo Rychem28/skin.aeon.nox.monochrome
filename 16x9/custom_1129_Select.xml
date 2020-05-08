@@ -24,7 +24,9 @@
 	<onunload>ClearProperty(CustomSelectMyFlixDimmer,1131)</onunload>
 	<onunload>ClearProperty(CustomSelectDialogInfoDimmer,1114)</onunload>
 	<onunload>ClearProperty(CustomSelectMusicVizBackground,1120)</onunload>
-	<onunload>ClearProperty(CustomSelectGameFlixDimmer,1131)</onunload>
+	<onunload>ClearProperty(CustomSelectGameFlixSquareDimmer,1131)</onunload>
+	<onunload>ClearProperty(CustomSelectGameFlixLandscapeDimmer,1131)</onunload>
+	<onunload>ClearProperty(CustomSelectGameFlixPortraitDimmer,1131)</onunload>	
 	<onunload>ClearProperty(CustomSelectMusicFlixDimmer,1131)</onunload>
 	<onunload>ClearProperty(CustomSelectMusicRightListDimmer,1131)</onunload>
 	<onunload>ClearProperty(CustomSelectPictureFlixDimmer,1131)</onunload>		
@@ -162,7 +164,9 @@
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectMyFlixDimmer))">SelectMyFlixDimmer</include>
 					<include condition="!String.IsEmpty(Window(1114).Property(CustomSelectDialogInfoDimmer))">SelectDialogInfoDimmer</include>
 					<include condition="!String.IsEmpty(Window(1120).Property(CustomSelectMusicVizBackground))">SelectMusicVizBackground</include>
-					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectGameFlixDimmer))">SelectGameFlixDimmer</include>
+					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectGameFlixSquareDimmer))">SelectGameFlixSquareDimmer</include>
+					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectGameFlixLandscapeDimmer))">SelectGameFlixLandscapeDimmer</include>					
+					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectGameFlixPortraitDimmer))">SelectGameFlixPortraitDimmer</include>					
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectMusicFlixDimmer))">SelectMusicFlixDimmer</include>
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectMusicRightListDimmer))">SelectMusicRightListDimmer</include>
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectPictureFlixDimmer))">SelectPictureFlixDimmer</include>	

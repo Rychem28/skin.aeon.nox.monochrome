@@ -3032,7 +3032,7 @@ msgctxt "#31995"
 msgid "Artist"
 msgstr "Artist"
 
-#view names added and miscellaneous labels 31996-32005
+#view names added and miscellaneous labels 31996-32009
 msgctxt "#31996"
 msgid "MusicFlix"
 msgstr "MusicFlix"
@@ -3070,8 +3070,8 @@ msgid "Netflix"
 msgstr "Netflix"
 
 msgctxt "#32005"
-msgid "GameFlix Wide"
-msgstr "GameFlixWide"
+msgid "GameFlix Landscape"
+msgstr "GameFlix Landscape"
 
 #Name of colour new colour theme
 msgctxt "#32006"
@@ -3085,6 +3085,10 @@ msgstr "Background/Icons"
 msgctxt "#32008"
 msgid "Weather"
 msgstr "Weather"
+
+msgctxt "#32009"
+msgid "GameFlix Portrait"
+msgstr "GameFlix Portrait"
 
 #Weather labels and descriptions (theme colour selection) 32010-32021
 

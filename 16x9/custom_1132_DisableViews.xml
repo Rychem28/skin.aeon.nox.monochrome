@@ -245,23 +245,32 @@
 					<selected>!Skin.HasSetting(Disable.PanelView)</selected>
 				</control>
 				<control type="radiobutton" id="1634">
-					<description>Disable GameFlix</description>
+					<description>Disable GameFlixSquare</description>
 					<textwidth>375</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>$LOCALIZE[31998]</label>
 					<onclick>SetProperty(DisableView,True,1132)</onclick>
-					<onclick>Skin.ToggleSetting(Disable.GameFlixView)</onclick>
-					<selected>!Skin.HasSetting(Disable.GameFlixView)</selected>
+					<onclick>Skin.ToggleSetting(Disable.GameFlixSquareView)</onclick>
+					<selected>!Skin.HasSetting(Disable.GameFlixSquareView)</selected>
 				</control>
 				<control type="radiobutton" id="1642">
-					<description>Disable GameFlixWide</description>
+					<description>Disable GameFlixLandscape</description>
 					<textwidth>375</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>$LOCALIZE[32005]</label>
 					<onclick>SetProperty(DisableView,True,1132)</onclick>
-					<onclick>Skin.ToggleSetting(Disable.GameFlixWideView)</onclick>
-					<selected>!Skin.HasSetting(Disable.GameFlixWideView)</selected>
-				</control> 				
+					<onclick>Skin.ToggleSetting(Disable.GameFlixLandscapeView)</onclick>
+					<selected>!Skin.HasSetting(Disable.GameFlixLandscapeView)</selected>
+				</control>
+				<control type="radiobutton" id="1643">
+					<description>Disable GameFlixPortrait</description>
+					<textwidth>375</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[32009]</label>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.GameFlixPortraitView)</onclick>
+					<selected>!Skin.HasSetting(Disable.GameFlixPortraitView)</selected>
+				</control> 					
 				<control type="radiobutton" id="1637">
 					<description>Disable MusicFlix</description>
 					<textwidth>375</textwidth>

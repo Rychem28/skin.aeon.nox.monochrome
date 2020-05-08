@@ -92,8 +92,9 @@
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),FanartList)">FanartListViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicJukeBox)">MusicJukeBoxViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),FullscreenWall)">FullscreenWallViewSettings</include>
-				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix)">GameFlixViewSettings</include>
-				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide)">GameFlixWideViewSettings</include>				
+				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixSquare)">GameFlixSquareViewSettings</include>
+				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixLandscape)">GameFlixLandscapeViewSettings</include>				
+				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixPortrait)">GameFlixPortraitViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix)">MusicFlixViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList)">MusicRightListViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix)">PictureFlixViewSettings</include>

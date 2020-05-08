@@ -608,60 +608,60 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">7</property>
-			<label>$LOCALIZE[1038]</label>
-			<label2 />
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<label>Nintendo Entertainment System</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Music,Addons,return)</onclick>
-			<property name="path">ActivateWindow(Music,Addons,return)</property>
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=nes",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/nintendones.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/nintendones.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=nes",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=nes",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">7</property>
-			<label>$LOCALIZE[1037]</label>
-			<label2 />
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<label>Nintendo SNES</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
-			<property name="path">ActivateWindow(Videos,Addons,return)</property>
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=snes",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/nintendosnes.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/nintendosnes.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=snes",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=snes",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
-			<label>$LOCALIZE[10040]</label>
-			<label2 />
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<label>Sega Master System</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Addonbrowser)</onclick>
-			<property name="path">ActivateWindow(Addonbrowser)</property>
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=sms",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/segamastersystem.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/segamastersystem.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=sms",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=sms",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
-			<label>$LOCALIZE[1043]</label>
-			<label2 />
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
+			<label>Sega MegaDrive/Genesis cartridges</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
-			<property name="path">ActivateWindow(Programs,Addons,return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
-			<label>$LOCALIZE[1039]</label>
-			<label2 />
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
-			<property name="path">ActivateWindow(Pictures,Addons,return)</property>
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=megadriv",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/segagenesis.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/segagenesis.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=megadriv",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=megadriv",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>

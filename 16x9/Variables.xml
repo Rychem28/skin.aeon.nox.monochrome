@@ -1977,13 +1977,14 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),RightList) + !String.IsEmpty(Skin.String(506.NoTopBar))">$INFO[Skin.String(506.NoTopBar)]</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MyFlix) + !String.IsEmpty(Skin.String(509.NoTopBar))">$INFO[Skin.String(509.NoTopBar)]</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicJukebox) + !String.IsEmpty(Skin.String(603.NoTopBar))">$INFO[Skin.String(603.NoTopBar)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix) + !String.IsEmpty(Skin.String(803.NoTopBar))">$INFO[Skin.String(803.NoTopBar)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide) + !String.IsEmpty(Skin.String(804.NoTopBar))">$INFO[Skin.String(804.NoTopBar)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(805.NoTopBar))">$INFO[Skin.String(805.NoTopBar)]</value>		
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixSquare) + !String.IsEmpty(Skin.String(803.NoTopBar))">$INFO[Skin.String(803.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixLandscape) + !String.IsEmpty(Skin.String(804.NoTopBar))">$INFO[Skin.String(804.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixPortrait) + !String.IsEmpty(Skin.String(805.NoTopBar))">$INFO[Skin.String(805.NoTopBar)]</value>		
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(806.NoTopBar))">$INFO[Skin.String(806.NoTopBar)]</value>	
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(807.NoTopBar))">$INFO[Skin.String(807.NoTopBar)]</value>		
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(808.NoTopBar))">$INFO[Skin.String(808.NoTopBar)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(809.NoTopBar))">$INFO[Skin.String(809.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(807.NoTopBar))">$INFO[Skin.String(807.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(808.NoTopBar))">$INFO[Skin.String(808.NoTopBar)]</value>		
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(809.NoTopBar))">$INFO[Skin.String(809.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(810.NoTopBar))">$INFO[Skin.String(810.NoTopBar)]</value>
 		<value>$LOCALIZE[16041]</value>
 	</variable>
 	<variable name="NoTopBarOnClickVar">
@@ -2041,20 +2042,22 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MyFlix) + !String.IsEmpty(Skin.String(509.NoTopBar))">Skin.Reset(509.NoTopBar)</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicJukeBox) + String.IsEmpty(Skin.String(603.NoTopBar))">Skin.SetString(603.NoTopBar,$LOCALIZE[351])</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicJukeBox) + !String.IsEmpty(Skin.String(603.NoTopBar))">Skin.Reset(603.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix) + String.IsEmpty(Skin.String(803.NoTopBar))">Skin.SetString(803.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlix) + !String.IsEmpty(Skin.String(803.NoTopBar))">Skin.Reset(803.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide) + String.IsEmpty(Skin.String(804.NoTopBar))">Skin.SetString(804.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixWide) + !String.IsEmpty(Skin.String(804.NoTopBar))">Skin.Reset(804.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + String.IsEmpty(Skin.String(805.NoTopBar))">Skin.SetString(805.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(805.NoTopBar))">Skin.Reset(805.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixSquare) + String.IsEmpty(Skin.String(803.NoTopBar))">Skin.SetString(803.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixSquare) + !String.IsEmpty(Skin.String(803.NoTopBar))">Skin.Reset(803.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixLandscape) + String.IsEmpty(Skin.String(804.NoTopBar))">Skin.SetString(804.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixLandscape) + !String.IsEmpty(Skin.String(804.NoTopBar))">Skin.Reset(804.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixPortrait) + String.IsEmpty(Skin.String(805.NoTopBar))">Skin.SetString(805.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixPortrait) + !String.IsEmpty(Skin.String(805.NoTopBar))">Skin.Reset(805.NoTopBar)</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + String.IsEmpty(Skin.String(806.NoTopBar))">Skin.SetString(806.NoTopBar,$LOCALIZE[351])</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicRightList) + !String.IsEmpty(Skin.String(806.NoTopBar))">Skin.Reset(806.NoTopBar)</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + String.IsEmpty(Skin.String(807.NoTopBar))">Skin.SetString(807.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(807.NoTopBar))">Skin.Reset(807.NoTopBar)</value>	
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + String.IsEmpty(Skin.String(808.NoTopBar))">Skin.SetString(808.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(808.NoTopBar))">Skin.Reset(808.NoTopBar)</value>	
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + String.IsEmpty(Skin.String(809.NoTopBar))">Skin.SetString(809.NoTopBar,$LOCALIZE[351])</value>
-		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(809.NoTopBar))">Skin.Reset(809.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + String.IsEmpty(Skin.String(807.NoTopBar))">Skin.SetString(807.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),MusicFlix) + !String.IsEmpty(Skin.String(807.NoTopBar))">Skin.Reset(807.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + String.IsEmpty(Skin.String(808.NoTopBar))">Skin.SetString(808.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(808.NoTopBar))">Skin.Reset(808.NoTopBar)</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + String.IsEmpty(Skin.String(809.NoTopBar))">Skin.SetString(809.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(809.NoTopBar))">Skin.Reset(809.NoTopBar)</value>	
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + String.IsEmpty(Skin.String(810.NoTopBar))">Skin.SetString(810.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(810.NoTopBar))">Skin.Reset(810.NoTopBar)</value>
         </variable>
 	<variable name="TopBarRightLabelVar">
 		<value condition="Pvr.IsPlayingTv">$INFO[System.Date][COLOR grey2]$INFO[System.Time, | ][/COLOR][COLOR white]$INFO[PVR.EpgEventRemainingTime,   - ][/COLOR]</value>
@@ -2235,23 +2238,57 @@
 		<value condition="String.IsEqual(Skin.String(PictureFlix.Dimmer),0%)">00FFFFFF</value>
 	</variable>
 	<!-- GameFlix Variables -->
-	<variable name="GameFlixDimmerLabelVar">
-		<value condition="!String.IsEmpty(Skin.String(GameFlix.Dimmer))">$INFO[Skin.String(GameFlix.Dimmer)]</value>
+	<variable name="GameFlixSquareDimmerLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixSquare.Dimmer))">$INFO[Skin.String(GameFlixSquare.Dimmer)]</value>
 		<value>60%</value>
 	</variable>
-	<variable name="GameFlixDimmerVar">
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),100%)">FFFFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),90%)">E6FFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),80%)">CCFFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),70%)">B3FFFFFF</value>
-		<value condition="String.IsEmpty(Skin.String(GameFlix.Dimmer))">99FFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),50%)">80FFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),40%)">66FFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),30%)">4DFFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),20%)">33FFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),10%)">1AFFFFFF</value>
-		<value condition="String.IsEqual(Skin.String(GameFlix.Dimmer),0%)">00FFFFFF</value>
+	<variable name="GameFlixLandscapeDimmerLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixLandscape.Dimmer))">$INFO[Skin.String(GameFlixLandscape.Dimmer)]</value>
+		<value>60%</value>
 	</variable>
+	<variable name="GameFlixPortraitDimmerLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixPortrait.Dimmer))">$INFO[Skin.String(GameFlixPortrait.Dimmer)]</value>
+		<value>60%</value>
+	</variable>
+	<variable name="GameFlixSquareDimmerVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),100%)">FFFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),90%)">E6FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),80%)">CCFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),70%)">B3FFFFFF</value>
+		<value condition="String.IsEmpty(Skin.String(GameFlixSquare.Dimmer))">99FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),50%)">80FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),40%)">66FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),30%)">4DFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),20%)">33FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),10%)">1AFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),0%)">00FFFFFF</value>
+	</variable>
+	<variable name="GameFlixLandscapeDimmerVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),100%)">FFFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),90%)">E6FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),80%)">CCFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),70%)">B3FFFFFF</value>
+		<value condition="String.IsEmpty(Skin.String(GameFlixLandscape.Dimmer))">99FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),50%)">80FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),40%)">66FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),30%)">4DFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),20%)">33FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),10%)">1AFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Dimmer),0%)">00FFFFFF</value>
+	</variable>
+	<variable name="GameFlixPortraitDimmerVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),100%)">FFFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),90%)">E6FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),80%)">CCFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),70%)">B3FFFFFF</value>
+		<value condition="String.IsEmpty(Skin.String(GameFlixPortrait.Dimmer))">99FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),50%)">80FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),40%)">66FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),30%)">4DFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),20%)">33FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),10%)">1AFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),0%)">00FFFFFF</value>
+	</variable>	
 	<!-- Background Colour Diffuse -->
 	<variable name="BackGroundDiffuseVar">
 		<value condition="Window.IsActive(pictures) + !String.IsEmpty(ListItem.PictureDate)">FFFFFFFF</value>
