@@ -11,7 +11,7 @@
                     <top>-10</top>
                     <height>124</height>
                     <scroll>true</scroll>
-                    <width>1600</width> <!-- change to fit with new window -->
+                    <width>1600</width>
                     <font>font_musicviz2</font>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
@@ -44,25 +44,13 @@
 							<left>15</left>
 							<label>$INFO[ListItem.Plot]</label>
 							<width>800</width>
-							<height>350</height>
+							<height>280</height>
 							<font>font15</font>
 							<textcolor>grey</textcolor>
 							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
 							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
-							<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
+							<visible>!String.IsEqual(ListItem.Property(platform),MAME) + Skin.HasSetting(Enable.GameFlixPortraitInfo)</visible>
 						</control>
- 						<control type="textbox">
-							<top>180</top>	
-							<left>1215</left>
-							<label>$INFO[ListItem.Plot]</label>
-							<width>800</width>
-							<height>350</height>
-							<font>font15</font>
-							<textcolor>grey</textcolor>
-							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
-							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
-							<visible>Skin.HasSetting(Enable.GameFlixInfo)</visible>
-						</control>                         
 						<control type="textbox">
 							<top>180</top>	
 							<left>15</left>
@@ -73,7 +61,7 @@
 							<textcolor>grey</textcolor>
 							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
 							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
-							<visible>!String.Contains(ListItem.Property(history),"not found") + String.IsEqual(ListItem.Property(platform),MAME)</visible>
+							<visible>!String.Contains(ListItem.Property(history),"not found") + Skin.HasSetting(Enable.GameFlixPortraitInfo) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
 						</control>
 					</control>
 				</control>
@@ -87,7 +75,7 @@
 						<texture background="true">$VAR[Art_CartBox_or_Flyer]</texture>
 						<bordertexture border="50">listpanel_back.png</bordertexture>
 						<bordersize>35</bordersize>
-						<visible>Skin.HasSetting(Enable.GameFlixBoxFront)</visible>
+						<visible>Skin.HasSetting(Enable.GameFlixPortraitBoxFront)</visible>
 					</control>
                 </control>
 				<control type="fixedlist" id="805">

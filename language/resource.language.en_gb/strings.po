@@ -3193,3 +3193,7 @@ msgstr "Show Home Buttons"
 msgctxt "#32047"
 msgid "Show selected buttons on the home page for power/settings/addons"
 msgstr "Show selected buttons on the home page for power/settings/addons"
+
+msgctxt "#32048"
+msgid "GameFlix Secondary Art"
+msgstr "GameFlix Secondart Art"

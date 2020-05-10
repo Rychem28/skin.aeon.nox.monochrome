@@ -2407,5 +2407,15 @@
         <value condition="String.Contains(ListItem.Plot,vector)">Vector</value>
         <value condition="String.Contains(ListItem.Plot,LCD)">LCD</value> 
         <value condition="String.Contains(ListItem.Plot,SVG)">SVG</value>         
-    </variable>    
+    </variable>
+	<variable name="GameFlixSquareArtVar">
+		<value condition="String.IsEmpty(Skin.String(GameFlixSquare.Art))">Skin.SetString(GameFlixSquare.Art,Snap)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Snap)">Skin.SetString(GameFlixSquare.Art,Title)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Title)">Skin.SetString(GameFlixSquare.Art,Flyer)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer)">Skin.SetString(GameFlixSquare.Art,Marquee)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Marquee)">Skin.SetString(GameFlixSquare.Art,Snap)</value>
+	</variable>
+	<variable name="GameFlixSquareLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixSquare.Art))">$INFO[Skin.String(GameFlixSquare.Art)]</value>
+	</variable>
 </includes>
