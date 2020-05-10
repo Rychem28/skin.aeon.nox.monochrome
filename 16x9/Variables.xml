@@ -2344,10 +2344,7 @@
 		<value>$INFO[ListItem.Genre,special://skin/colourbackgrounds/,.png]</value>	
 	</variable> -->
     <!-- AML Plugin Variables -->
-	<variable name="Art_CartBox_or_Flyer"><!-- Cartridge box for softlist items and flyers for Arcade -->
-		<value condition="!String.IsEqual(ListItem.Property(platform),MAME) + !String.IsEmpty(ListItem.Art(boxfront))">$INFO[ListItem.Art(boxfront)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(flyer))">$INFO[ListItem.Art(flyer)]</value>
-	</variable>    
+  
 	<variable name="AMLNPlayerVar">
 		<value condition="String.Contains(ListItem.Property(nplayers),4P) + String.Contains(ListItem.Property(nplayers),sim)">logos/gamecontrollers/4playersim.png</value>
 		<value condition="String.Contains(ListItem.Property(nplayers),4P) + String.Contains(ListItem.Property(nplayers),alt)">logos/gamecontrollers/4playeralt.png</value>
@@ -2418,4 +2415,10 @@
 	<variable name="GameFlixSquareLabelVar">
 		<value condition="!String.IsEmpty(Skin.String(GameFlixSquare.Art))">$INFO[Skin.String(GameFlixSquare.Art)]</value>
 	</variable>
+	<variable name="GameFlixArtVar">
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Snap)">$INFO[ListItem.Art(snap)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Title)">$INFO[ListItem.Art(title)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer)">$INFO[ListItem.Art(flyer)]</value>		
+		<value condition="!String.IsEmpty(ListItem.Art(flyer))">$INFO[ListItem.Art(flyer)]</value>
+	</variable>  	
 </includes>

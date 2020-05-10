@@ -938,34 +938,37 @@
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[31604]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixSquareInfo)</onclick>
+			<onclick condition="Skin.HasSetting(Enable.GameFlixSquareArt)">Skin.ToggleSetting(Enable.GameFlixSquareArt)</onclick>			
 			<selected>Skin.HasSetting(Enable.GameFlixSquareInfo)</selected>
 		</control>
 		<control type="radiobutton" id="1512">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixSquareArt)</onclick>
+			<onclick condition="!Skin.HasSetting(Enable.GameFlixSquareInfo)">Skin.ToggleSetting(Enable.GameFlixSquareArt)</onclick>
 			<onclick>Skin.SetString(GameFlixSquare.Art,Snap)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixSquareArt)</selected>
 			<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Enable.GameFlixSquareInfo)</visible>
 		</control>
 		<control type="button" id="1513">
 			<include>ButtonCommonValues</include>
-			<label>   - Art</label>
+			<label>$LOCALIZE[32048]</label>
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixSquareLabelVar][/COLOR]</label2>
 			<onclick>$VAR[GameFlixSquareArtVar]</onclick>
-			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixSquareArt)</visible>
+			<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Enable.GameFlixSquareInfo)</visible>
 		</control>
 		<control type="radiobutton" id="1514">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32043]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixController)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixController)</selected>
+			<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>
 		</control>
 		<control type="radiobutton" id="1515">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32044]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixLogo)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixLogo)</selected>
+			<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>			
 		</control>		
 		<control type="radiobutton" id="1516">
 			<include>ButtonCommonValues</include>

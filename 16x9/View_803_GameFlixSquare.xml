@@ -72,10 +72,10 @@
 						<width>490</width>
 						<height>490</height>
 						<aspectratio align="left" aligny="top">keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(snap)]</texture>
+						<texture background="true">$VAR[GameFlixArtVar]</texture>
 						<bordertexture border="50">listpanel_back.png</bordertexture>
 						<bordersize>35</bordersize>
-						<visible>Skin.HasSetting(Enable.GameFlixSquareArt) + String.IsEqual(Skin.String(GameFlixSquare.Art),Snap)</visible>
+						<visible>Skin.HasSetting(Enable.GameFlixSquareArt)</visible>
 					</control>
                 </control>
 				<control type="fixedlist" id="803">
