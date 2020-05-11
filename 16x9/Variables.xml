@@ -2405,20 +2405,64 @@
         <value condition="String.Contains(ListItem.Plot,LCD)">LCD</value> 
         <value condition="String.Contains(ListItem.Plot,SVG)">SVG</value>         
     </variable>
+	<!-- GameFlix Square Variables -->
 	<variable name="GameFlixSquareArtVar">
 		<value condition="String.IsEmpty(Skin.String(GameFlixSquare.Art))">Skin.SetString(GameFlixSquare.Art,Snap)</value>
 		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Snap)">Skin.SetString(GameFlixSquare.Art,Title)</value>
-		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Title)">Skin.SetString(GameFlixSquare.Art,Flyer)</value>
-		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer)">Skin.SetString(GameFlixSquare.Art,Marquee)</value>
-		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Marquee)">Skin.SetString(GameFlixSquare.Art,Snap)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Title)">Skin.SetString(GameFlixSquare.Art,Flyer-Box)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer-Box)">Skin.SetString(GameFlixSquare.Art,Marquee)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Marquee)">Skin.SetString(GameFlixSquare.Art,PCB-Cartridge)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),PCB-Cartridge)">Skin.SetString(GameFlixSquare.Art,Snap)</value>		
 	</variable>
 	<variable name="GameFlixSquareLabelVar">
 		<value condition="!String.IsEmpty(Skin.String(GameFlixSquare.Art))">$INFO[Skin.String(GameFlixSquare.Art)]</value>
 	</variable>
-	<variable name="GameFlixArtVar">
-		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Snap)">$INFO[ListItem.Art(snap)]</value>
-		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Title)">$INFO[ListItem.Art(title)]</value>
-		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer)">$INFO[ListItem.Art(flyer)]</value>		
-		<value condition="!String.IsEmpty(ListItem.Art(flyer))">$INFO[ListItem.Art(flyer)]</value>
-	</variable>  	
+	<variable name="GameFlixSquareArtPathVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Snap)">$INFO[ListItem.Art(snap)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),Title)">$INFO[ListItem.Art(title)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Art),PCB-Cartridge)">$INFO[ListItem.Art(cartridge)]</value>		
+		<value condition="!String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer-Box)">$INFO[ListItem.Art(boxfront)]</value>			
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Flyer-Box)">$INFO[ListItem.Art(flyer)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare.Art),Marquee)">$INFO[ListItem.Art(marquee)]</value>		
+	</variable> 
+	<!-- GameFlix Landscape Variables -->
+	<variable name="GameFlixLandscapeArtVar">
+		<value condition="String.IsEmpty(Skin.String(GameFlixLandscape.Art))">Skin.SetString(GameFlixLandscape.Art,Snap)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),Snap)">Skin.SetString(GameFlixLandscape.Art,Title)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),Title)">Skin.SetString(GameFlixLandscape.Art,Flyer-Box)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),Flyer-Box)">Skin.SetString(GameFlixLandscape.Art,Marquee)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),Marquee)">Skin.SetString(GameFlixLandscape.Art,PCB-Cartridge)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),PCB-Cartridge)">Skin.SetString(GameFlixLandscape.Art,Snap)</value>		
+	</variable>
+	<variable name="GameFlixLandscapeLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixLandscape.Art))">$INFO[Skin.String(GameFlixLandscape.Art)]</value>
+	</variable>
+	<variable name="GameFlixLandscapeArtPathVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),Snap)">$INFO[ListItem.Art(snap)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),Title)">$INFO[ListItem.Art(title)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixLandscape.Art),PCB-Cartridge)">$INFO[ListItem.Art(cartridge)]</value>		
+		<value condition="!String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixLandscape.Art),Flyer-Box)">$INFO[ListItem.Art(boxfront)]</value>			
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixLandscape.Art),Flyer-Box)">$INFO[ListItem.Art(flyer)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixLandscape.Art),Marquee)">$INFO[ListItem.Art(marquee)]</value>		
+	</variable>
+	<!-- GameFlix Portrait Variables -->
+	<variable name="GameFlixPortraitArtVar">
+		<value condition="String.IsEmpty(Skin.String(GameFlixPortrait.Art))">Skin.SetString(GameFlixPortrait.Art,Snap)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),Snap)">Skin.SetString(GameFlixPortrait.Art,Title)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),Title)">Skin.SetString(GameFlixPortrait.Art,Flyer-Box)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),Flyer-Box)">Skin.SetString(GameFlixPortrait.Art,Marquee)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),Marquee)">Skin.SetString(GameFlixPortrait.Art,PCB-Cartridge)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),PCB-Cartridge)">Skin.SetString(GameFlixPortrait.Art,Snap)</value>		
+	</variable>
+	<variable name="GameFlixPortraitLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixPortrait.Art))">$INFO[Skin.String(GameFlixPortrait.Art)]</value>
+	</variable>
+	<variable name="GameFlixPortraitArtPathVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),Snap)">$INFO[ListItem.Art(snap)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),Title)">$INFO[ListItem.Art(title)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Art),PCB-Cartridge)">$INFO[ListItem.Art(cartridge)]</value>		
+		<value condition="!String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixPortrait.Art),Flyer-Box)">$INFO[ListItem.Art(boxfront)]</value>			
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixPortrait.Art),Flyer-Box)">$INFO[ListItem.Art(flyer)]</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixPortrait.Art),Marquee)">$INFO[ListItem.Art(marquee)]</value>		
+	</variable> 	
 </includes>

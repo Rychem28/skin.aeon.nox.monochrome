@@ -68,11 +68,11 @@
 				<control type="group"> <!-- extra art items -->
 					 <control type="image">
 						<left>10</left>
-						<top>140</top>
-						<width>490</width>
-						<height>490</height>
-						<aspectratio align="left" aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[GameFlixArtVar]</texture>
+						<top>100</top>
+						<width>640</width>
+						<height>480</height>
+						<aspectratio align="left" aligny="top">stretch</aspectratio>
+						<texture background="true">$VAR[GameFlixSquareArtPathVar]</texture>
 						<bordertexture border="50">listpanel_back.png</bordertexture>
 						<bordersize>35</bordersize>
 						<visible>Skin.HasSetting(Enable.GameFlixSquareArt)</visible>

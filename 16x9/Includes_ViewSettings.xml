@@ -995,17 +995,17 @@
 		<control type="radiobutton" id="1512">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixLandscapeArt)</onclick>
+			<onclick condition="!Skin.HasSetting(Enable.GameFlixLandscapeInfo)">Skin.ToggleSetting(Enable.GameFlixLandscapeArt)</onclick>
 			<onclick>Skin.SetString(GameFlixLandscape.Art,Snap)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixLandscapeArt)</selected>
 			<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Enable.GameFlixLandscapeInfo)</visible>
 		</control>
 		<control type="button" id="1513">
 			<include>ButtonCommonValues</include>
-			<label>   - Art</label>
+			<label>$LOCALIZE[32048]</label>
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixLandscapeLabelVar][/COLOR]</label2>
 			<onclick>$VAR[GameFlixLandscapeArtVar]</onclick>
-			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixLandscapeArt)</visible>
+			<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Enable.GameFlixLandscapeInfo)</visible>
 		</control>
 		<control type="radiobutton" id="1514">
 			<include>ButtonCommonValues</include>
@@ -1044,17 +1044,17 @@
 		<control type="radiobutton" id="1512">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixPortraitArt)</onclick>
+			<onclick condition="!Skin.HasSetting(Enable.GameFlixPortraitInfo)">Skin.ToggleSetting(Enable.GameFlixPortraitArt)</onclick>
 			<onclick>Skin.SetString(GameFlixPortrait.Art,Snap)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixPortraitArt)</selected>
 			<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Enable.GameFlixPortraitInfo)</visible>
 		</control>
 		<control type="button" id="1513">
 			<include>ButtonCommonValues</include>
-			<label>   - Art</label>
+			<label>$LOCALIZE[32048]</label>
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixPortraitLabelVar][/COLOR]</label2>
 			<onclick>$VAR[GameFlixPortraitArtVar]</onclick>
-			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixPortraitArt)</visible>
+			<visible>$EXP[PluginAdvancedLauncher] + !Skin.HasSetting(Enable.GameFlixPortraitInfo)</visible>
 		</control>
 		<control type="radiobutton" id="1514">
 			<include>ButtonCommonValues</include>
