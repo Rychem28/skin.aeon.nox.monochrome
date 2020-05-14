@@ -752,18 +752,18 @@
 	<variable name="PlayerArtworkDiscVar">
 		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
 		<value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,1)">$INFO[Player.Art(album.discart1)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,2)">$INFO[Player.Art(album.discart2)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,3)">$INFO[Player.Art(album.discart3)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,4)">$INFO[Player.Art(album.discart4)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,5)">$INFO[Player.Art(album.discart5)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,6)">$INFO[Player.Art(album.discart6)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,7)">$INFO[Player.Art(album.discart7)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,8)">$INFO[Player.Art(album.discart8)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,9)">$INFO[Player.Art(album.discart9)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,10)">$INFO[Player.Art(album.discart10)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,11)">$INFO[Player.Art(album.discart11)]</value>
-		<value condition="Integer.IsEqual(MusicPlayer.DiscNumber,12)">$INFO[Player.Art(album.discart12)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart1)) + Integer.IsEqual(MusicPlayer.DiscNumber,1)">$INFO[Player.Art(album.discart1)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart2)) + Integer.IsEqual(MusicPlayer.DiscNumber,2)">$INFO[Player.Art(album.discart2)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart3)) + Integer.IsEqual(MusicPlayer.DiscNumber,3)">$INFO[Player.Art(album.discart3)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart4)) + Integer.IsEqual(MusicPlayer.DiscNumber,4)">$INFO[Player.Art(album.discart4)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart5)) + Integer.IsEqual(MusicPlayer.DiscNumber,5)">$INFO[Player.Art(album.discart5)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart6)) + Integer.IsEqual(MusicPlayer.DiscNumber,6)">$INFO[Player.Art(album.discart6)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart7) + Integer.IsEqual(MusicPlayer.DiscNumber,7)">$INFO[Player.Art(album.discart7)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart8)) + Integer.IsEqual(MusicPlayer.DiscNumber,8)">$INFO[Player.Art(album.discart8)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart9)) + Integer.IsEqual(MusicPlayer.DiscNumber,9)">$INFO[Player.Art(album.discart9)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart10)) + Integer.IsEqual(MusicPlayer.DiscNumber,10)">$INFO[Player.Art(album.discart10)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart11)) + Integer.IsEqual(MusicPlayer.DiscNumber,11)">$INFO[Player.Art(album.discart11)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart12)) + Integer.IsEqual(MusicPlayer.DiscNumber,12)">$INFO[Player.Art(album.discart12)]</value>
 		<value condition="Skin.HasSetting(MusicDiscFallback.Vinyl)">special://skin/extras/cdart/vinyl.png</value>
 		<value>special://skin/extras/cdart/blank.png</value>
 	</variable>
@@ -771,18 +771,20 @@
 		<value condition="!String.IsEmpty(ListItem.Art(album.discart))">$INFO[ListItem.Art(album.discart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Art(discart))">$INFO[Container.ListItem.Art(discart)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,1)">$INFO[ListItem.Art(album.discart1)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,2)">$INFO[ListItem.Art(album.discart2)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,3)">$INFO[ListItem.Art(album.discart3)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,4)">$INFO[ListItem.Art(album.discart4)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,5)">$INFO[ListItem.Art(album.discart5)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,6)">$INFO[ListItem.Art(album.discart6)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,7)">$INFO[ListItem.Art(album.discart7)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,8)">$INFO[ListItem.Art(album.discart8)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,9)">$INFO[ListItem.Art(album.discart9)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,10)">$INFO[ListItem.Art(album.discart10)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,11)">$INFO[ListItem.Art(album.discart11)]</value>
-		<value condition="Integer.IsEqual(ListItem.DiscNumber,12)">$INFO[ListItem.Art(album.discart12)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart1)) + Integer.IsEqual(ListItem.DiscNumber,1)">$INFO[ListItem.Art(album.discart1)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart2)) + Integer.IsEqual(ListItem.DiscNumber,2)">$INFO[ListItem.Art(album.discart2)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart3)) + Integer.IsEqual(ListItem.DiscNumber,3)">$INFO[ListItem.Art(album.discart3)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart4)) + Integer.IsEqual(ListItem.DiscNumber,4)">$INFO[ListItem.Art(album.discart4)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart5)) + Integer.IsEqual(ListItem.DiscNumber,5)">$INFO[ListItem.Art(album.discart5)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart6)) + Integer.IsEqual(ListItem.DiscNumber,6)">$INFO[ListItem.Art(album.discart6)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart7)) + Integer.IsEqual(ListItem.DiscNumber,7)">$INFO[ListItem.Art(album.discart7)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart8)) + Integer.IsEqual(ListItem.DiscNumber,8)">$INFO[ListItem.Art(album.discart8)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart9)) + Integer.IsEqual(ListItem.DiscNumber,9)">$INFO[ListItem.Art(album.discart9)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart10)) + Integer.IsEqual(ListItem.DiscNumber,10)">$INFO[ListItem.Art(album.discart10)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart11)) + Integer.IsEqual(ListItem.DiscNumber,11)">$INFO[ListItem.Art(album.discart11)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart12)) + Integer.IsEqual(ListItem.DiscNumber,12)">$INFO[ListItem.Art(album.discart12)]</value>
+		<value condition="Skin.HasSetting(MusicDiscFallback.Vinyl)">special://skin/extras/cdart/vinyl.png</value>
+		<value>special://skin/extras/cdart/blank.png</value>
 	</variable>
 	<variable name="PlayerTitleLabelVar">
 		<value condition="Player.ChapterCount + !Window.IsVisible(fullscreeninfo)">$INFO[Player.Chapter,$LOCALIZE[21396] ]$INFO[Player.ChapterCount, / ] • $INFO[Player.Title]</value>

@@ -16,7 +16,7 @@
 						<aspectratio align="right">keep</aspectratio>
 						<animation effect="rotate" end="-360" center="auto" time="10000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 						<texture background="true" diffuse="thumbs/boxes/cdart_mask.png">$VAR[ArtworkDiscVar]</texture>
-						<visible>Skin.HasSetting(Enable.MusicRightListCDArt)</visible>
+						<visible>Skin.HasSetting(Enable.MusicRightListCDArt) + !String.IsEmpty(ListItem.Album)</visible>
 					</control>
 					<control type="image">
 						<top>160</top>
