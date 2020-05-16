@@ -285,16 +285,16 @@
 					<bordersize>30</bordersize>
 				</control>
 				<control type="label">
-					<left>270</left>
+					<left>250</left>
 					<top>705</top>
-					<width>252</width>
-					<height>252</height>
+					<width>272</width>
+					<height>272</height>
 					<textcolor>black</textcolor>
 					<aligny>top</aligny>
 					<align>center</align>
-					<font>fontCDalbumViz</font>
+					<font>fontCDalbum</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[CR][CR][CR][CR]$INFO[MusicPlayer.Album]</label>
+					<label>[CR][CR][CR][CR][CR][CR][CR]$INFO[MusicPlayer.Album]</label>
 					<animation effect="rotate" end="-360" center="auto" time="8333" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 					<visible>String.IsEmpty(Player.Art(album.discart))</visible>
 				</control>

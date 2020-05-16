@@ -1194,9 +1194,9 @@
 						<textcolor>black</textcolor>
 						<aligny>top</aligny>
 						<align>center</align>
-						<font>fontCDalbum</font>
+						<font>fontCDalbumsmall</font>
 						<wrapmultiline>true</wrapmultiline>
-						<label>[CR][CR][CR][CR][CR]$INFO[MusicPlayer.Album]</label>
+						<label>[CR][CR][CR][CR][CR][CR]$INFO[MusicPlayer.Album]</label>
 						<animation effect="rotate" end="-360" center="auto" time="8333" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 						<visible>String.IsEmpty(Player.Art(album.discart))</visible>
 					</control>					
