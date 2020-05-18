@@ -1987,6 +1987,7 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix) + !String.IsEmpty(Skin.String(808.NoTopBar))">$INFO[Skin.String(808.NoTopBar)]</value>		
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(809.NoTopBar))">$INFO[Skin.String(809.NoTopBar)]</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(810.NoTopBar))">$INFO[Skin.String(810.NoTopBar)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixMAME) + !String.IsEmpty(Skin.String(811.NoTopBar))">$INFO[Skin.String(811.NoTopBar)]</value>		
 		<value>$LOCALIZE[16041]</value>
 	</variable>
 	<variable name="NoTopBarOnClickVar">
@@ -2060,6 +2061,8 @@
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures) + !String.IsEmpty(Skin.String(809.NoTopBar))">Skin.Reset(809.NoTopBar)</value>	
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + String.IsEmpty(Skin.String(810.NoTopBar))">Skin.SetString(810.NoTopBar,$LOCALIZE[351])</value>
 		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix) + !String.IsEmpty(Skin.String(810.NoTopBar))">Skin.Reset(810.NoTopBar)</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixMAME) + String.IsEmpty(Skin.String(811.NoTopBar))">Skin.SetString(811.NoTopBar,$LOCALIZE[351])</value>
+		<value condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixMAME) + !String.IsEmpty(Skin.String(811.NoTopBar))">Skin.Reset(811.NoTopBar)</value>		
         </variable>
 	<variable name="TopBarRightLabelVar">
 		<value condition="Pvr.IsPlayingTv">$INFO[System.Date][COLOR grey2]$INFO[System.Time, | ][/COLOR][COLOR white]$INFO[PVR.EpgEventRemainingTime,   - ][/COLOR]</value>
@@ -2252,6 +2255,10 @@
 		<value condition="!String.IsEmpty(Skin.String(GameFlixPortrait.Dimmer))">$INFO[Skin.String(GameFlixPortrait.Dimmer)]</value>
 		<value>60%</value>
 	</variable>
+	<variable name="GameFlixMAMEDimmerLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixMAME.Dimmer))">$INFO[Skin.String(GameFlixMAME.Dimmer)]</value>
+		<value>60%</value>
+	</variable>	
 	<variable name="GameFlixSquareDimmerVar">
 		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),100%)">FFFFFFFF</value>
 		<value condition="String.IsEqual(Skin.String(GameFlixSquare.Dimmer),90%)">E6FFFFFF</value>
@@ -2290,6 +2297,19 @@
 		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),20%)">33FFFFFF</value>
 		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),10%)">1AFFFFFF</value>
 		<value condition="String.IsEqual(Skin.String(GameFlixPortrait.Dimmer),0%)">00FFFFFF</value>
+	</variable>
+	<variable name="GameFlixMAMEDimmerVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),100%)">FFFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),90%)">E6FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),80%)">CCFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),70%)">B3FFFFFF</value>
+		<value condition="String.IsEmpty(Skin.String(GameFlixMAME.Dimmer))">99FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),50%)">80FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),40%)">66FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),30%)">4DFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),20%)">33FFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),10%)">1AFFFFFF</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Dimmer),0%)">00FFFFFF</value>
 	</variable>	
 	<!-- Background Colour Diffuse -->
 	<variable name="BackGroundDiffuseVar">
@@ -2466,5 +2486,24 @@
 		<value condition="!String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixPortrait.Art),Flyer-Box)">$INFO[ListItem.Art(boxfront)]</value>			
 		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixPortrait.Art),Flyer-Box)">$INFO[ListItem.Art(flyer)]</value>
 		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixPortrait.Art),Marquee)">$INFO[ListItem.Art(marquee)]</value>		
+	</variable>
+	<!-- GameFlix Square Variables -->
+	<variable name="GameFlixMAMEArtVar">
+		<value condition="String.IsEmpty(Skin.String(GameFlixMAME.Art))">Skin.SetString(GameFlixMAME.Art,Snap)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Snap)">Skin.SetString(GameFlixMAME.Art,Title)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Title)">Skin.SetString(GameFlixMAME.Art,Flyer-Box)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Flyer-Box)">Skin.SetString(GameFlixMAME.Art,Marquee)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Marquee)">Skin.SetString(GameFlixMAME.Art,PCB-Cartridge)</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),PCB-Cartridge)">Skin.SetString(GameFlixMAME.Art,Snap)</value>		
+	</variable>
+	<variable name="GameFlixMAMELabelVar">
+		<value condition="!String.IsEmpty(Skin.String(GameFlixMAME.Art))">$INFO[Skin.String(GameFlixMAME.Art)]</value>
+	</variable>
+	<variable name="GameFlixMAMEArtPathVar">
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Snap)">$INFO[ListItem.Art(snap)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Title)">$INFO[ListItem.Art(title)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),PCB)">$INFO[ListItem.Art(cartridge)]</value>		
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Flyer-Box)">$INFO[ListItem.Art(flyer)]</value>
+		<value condition="String.IsEqual(Skin.String(GameFlixMAME.Art),Marquee)">$INFO[ListItem.Art(marquee)]</value>		
 	</variable> 	
 </includes>

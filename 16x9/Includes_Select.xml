@@ -1007,6 +1007,63 @@
 			<onclick>Dialog.Close(1129)</onclick>
 			<onclick>Skin.SetString(GameFlixPortrait.Dimmer,0%)</onclick>
 		</item>
+	</include>
+	<include name="SelectGameFlixMAMEDimmer">
+		<item>
+			<label>100%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,100%)</onclick>
+		</item>
+		<item>
+			<label>90%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,90%)</onclick>
+		</item>
+		<item>
+			<label>80%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,80%)</onclick>
+		</item>
+		<item>
+			<label>70%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,70%)</onclick>
+		</item>
+		<item>
+			<label>60% - $LOCALIZE[571]</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.Reset(GameFlixMAME.Dimmer)</onclick>
+		</item>
+		<item>
+			<label>50%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,50%)</onclick>
+		</item>
+		<item>
+			<label>40%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,40%)</onclick>
+		</item>
+		<item>
+			<label>30%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,30%)</onclick>
+		</item>
+		<item>
+			<label>20%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,20%)</onclick>
+		</item>
+		<item>
+			<label>10%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,10%)</onclick>
+		</item>
+		<item>
+			<label>0%</label>
+			<onclick>Dialog.Close(1129)</onclick>
+			<onclick>Skin.SetString(GameFlixMAME.Dimmer,0%)</onclick>
+		</item>
 	</include>	
 	<include name="SelectMusicFlixDimmer">
 		<item>

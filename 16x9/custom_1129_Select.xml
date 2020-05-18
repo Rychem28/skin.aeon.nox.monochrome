@@ -29,7 +29,8 @@
 	<onunload>ClearProperty(CustomSelectGameFlixPortraitDimmer,1131)</onunload>	
 	<onunload>ClearProperty(CustomSelectMusicFlixDimmer,1131)</onunload>
 	<onunload>ClearProperty(CustomSelectMusicRightListDimmer,1131)</onunload>
-	<onunload>ClearProperty(CustomSelectPictureFlixDimmer,1131)</onunload>		
+	<onunload>ClearProperty(CustomSelectPictureFlixDimmer,1131)</onunload>
+	<onunload>ClearProperty(CustomSelectGameFlixMAMEDimmer,1131)</onunload>		
 	<controls>
 		<control type="group">
 			<include>DialogOpenCloseAnimation</include>
@@ -169,7 +170,8 @@
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectGameFlixPortraitDimmer))">SelectGameFlixPortraitDimmer</include>					
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectMusicFlixDimmer))">SelectMusicFlixDimmer</include>
 					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectMusicRightListDimmer))">SelectMusicRightListDimmer</include>
-					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectPictureFlixDimmer))">SelectPictureFlixDimmer</include>	
+					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectPictureFlixDimmer))">SelectPictureFlixDimmer</include>
+					<include condition="!String.IsEmpty(Window(1131).Property(CustomSelectGameFlixMAMEDimmer))">SelectGameFlixMAMEDimmer</include>					
 				</content>
 			</control>
 			<control type="list" id="90101">

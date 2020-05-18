@@ -100,6 +100,7 @@
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),PictureFlix)">PictureFlixViewSettings</include>
 				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),SpecialFeatures)">SpecialFeaturesViewSettings</include>
                 <include condition="String.IsEqual(Window(Home).Property(actualViewtype),Netflix)">NetflixViewSettings</include>
+				<include condition="String.IsEqual(Window(Home).Property(actualViewtype),GameFlixMAME)">GameFlixMAMEViewSettings</include>				
 				<!-- Bottom Settings -->
 				<!-- Button IDs (1550-1559) -->
 				<!-- InfoPopup Delay -->

@@ -6,7 +6,7 @@
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<onunload>ClearProperty(Progams.Games,Home)</onunload>
-	<views>50,501,51,54,55,57,500,503,803,804,805</views>
+	<views>50,501,51,54,55,57,500,503,803,804,805,811</views>
 	<menucontrol>9051</menucontrol>
 	<controls>
 		<control type="button" id="4400">
@@ -51,7 +51,9 @@
 			<include condition="!Skin.HasSetting(Disable.GameFlixLandscapeView)">View_804_GameFlixLandscape</include>
 			<!-- view id = 804 -->	
 			<include condition="!Skin.HasSetting(Disable.GameFlixPortraitView)">View_805_GameFlixPortrait</include>
-			<!-- view id = 805 -->	
+			<!-- view id = 805 -->
+			<include condition="!Skin.HasSetting(Disable.GameFlixMAMEView)">View_811_GameFlixMAME</include>
+			<!-- view id = 811 -->				
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(54) | Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(57) | Control.IsVisible(503)</visible>
@@ -197,7 +199,7 @@
 		</control>
 		<control type="group"> <!--bottom infos for AML/Steam PLugins -->
 			<include>BottomScrollbars</include>
-			<visible>Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(805)</visible>
+			<visible>Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(805) | Control.IsVisible(811)</visible>
 			<top>950</top>
 			<left>30</left>
 			<control type="group"> <!-- label display, text if image doesn't work -->

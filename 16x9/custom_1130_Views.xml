@@ -320,7 +320,13 @@
 							<onclick>Container.SetViewMode(810)</onclick>
 							<visible>Window.IsActive(videos)</visible>
 							<visible>$EXP[PluginNetflix]</visible>
-						</item>						
+						</item>
+						<item>
+							<label>$LOCALIZE[32049]</label>
+							<onclick>Container.SetViewMode(811)</onclick>
+							<visible>Window.IsActive(programs)</visible>
+							<visible>[$EXP[PluginAdvancedLauncher] | $EXP[PluginSteamLauncher]] + !Skin.HasSetting(Disable.GameFlixMAMEView)</visible>
+						</item>							
 					</content>
 				</control>
 				<control type="button" id="9012">

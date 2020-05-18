@@ -145,6 +145,25 @@
 			<texture background="true">$INFO[Listitem.Icon]</texture> <!-- configurable image in add-on -->
 			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
 			<bordersize>20</bordersize>
+			<visible>!String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>			
+		</control>
+		<control type="group">
+			<left>10</left>
+			<top>75</top>
+			<width>390</width>
+			<height>390</height>
+			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>			
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(title)]</texture>
+				<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<texture background="true">$INFO[ListItem.Genre,logos/gamebox/,.png]</texture>
+				<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>		
 		</control>
 	</include>
 	<include name="GameFlixPosterReflection">
@@ -154,6 +173,17 @@
 			<width>350</width>
 			<height>402</height>
 			<texture background="true" flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[Listitem.Icon]</texture>
+			<visible>!String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>			
 		</control>
+		<control type="image">
+			<left>29</left>
+			<top>465</top>
+			<width>350</width>
+			<height>402</height>
+			<texture background="true"  flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[ListItem.Genre,logos/gamebox/,.png]</texture>
+			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
+			<bordersize>20</bordersize>
+			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>
+		</control>	
 	</include>
 </includes>
