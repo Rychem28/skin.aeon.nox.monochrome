@@ -3201,3 +3201,7 @@ msgstr "GameFlix Secondary Art"
 msgctxt "#32049"
 msgid "GameFlix MAME"
 msgstr "GameFlix MAME"
+
+msgctxt "#32050"
+msgid "Display Cover Template (for missing art)"
+msgstr "Display Cover Template (for missing art)"

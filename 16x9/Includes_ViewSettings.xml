@@ -969,8 +969,14 @@
 			<onclick>Skin.ToggleSetting(Enable.GameFlixLogo)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixLogo)</selected>
 			<visible>!String.IsEqual(ListItem.Property(platform),MAME)</visible>			
-		</control>		
+		</control>
 		<control type="radiobutton" id="1516">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32050]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixBoxBlank)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixBoxBlank)</selected>
+		</control>		
+		<control type="radiobutton" id="1517">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32045]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
@@ -1019,8 +1025,14 @@
 			<label>$LOCALIZE[32044]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixLogo)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixLogo)</selected>
-		</control>		
+		</control>
 		<control type="radiobutton" id="1516">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32050]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixBoxBlank)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixBoxBlank)</selected>
+		</control>		
+		<control type="radiobutton" id="1517">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32045]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
@@ -1069,8 +1081,14 @@
 			<label>$LOCALIZE[32044]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixLogo)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixLogo)</selected>
-		</control>		
+		</control>
 		<control type="radiobutton" id="1516">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32050]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixBoxBlank)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixBoxBlank)</selected>
+		</control>			
+		<control type="radiobutton" id="1517">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32045]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>

@@ -128,14 +128,13 @@
 			<texture background="true">$INFO[Listitem.Icon]</texture> <!-- configurable image in add-on -->
 			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
 			<bordersize>20</bordersize>
-			<visible>!String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>			
 		</control>
 		<control type="group">
 			<left>10</left>
 			<top>165</top>
 			<width>400</width>
 			<height>300</height>
-			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>			
+			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png) + Skin.HasSetting(Enable.GameFlixBoxBLank)</visible>		
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(title)]</texture>
@@ -166,7 +165,7 @@
 			<texture background="true"  flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[ListItem.Genre,logos/gamebox/,.png]</texture>
 			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
 			<bordersize>20</bordersize>
-			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png)</visible>
+			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png) + Skin.HasSetting(Enable.GameFlixBoxBLank)</visible>
 		</control>		
 	</include>	
 </includes>
