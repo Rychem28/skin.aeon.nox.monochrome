@@ -8,7 +8,7 @@
 				<animation effect="slide" start="0" end="0,60" time="0" tween="cubic" easing="inout">Conditional</animation>
                 <control type="label">
                     <left>25</left>
-                    <top>-10</top>
+                    <top>50</top>
                     <height>124</height>
                     <scroll>true</scroll>
                     <width>1600</width>
@@ -18,7 +18,7 @@
                 </control>
      			<control type="group"> <!-- information box -->
 					<left>10</left>
-					<top>115</top>
+					<top>175</top>
 					<width>1000</width>
 					<height>220</height>
 					<include>VisibleFadeAnimation</include>
@@ -68,9 +68,9 @@
 				<control type="group"> <!-- extra art items -->
 					 <control type="image">
 						<left>10</left>
-						<top>100</top>
-						<width>640</width>
-						<height>480</height>
+						<top>160</top>
+						<width>600</width>
+						<height>420</height>
 						<aspectratio align="left" aligny="top">stretch</aspectratio>
 						<texture background="true">$VAR[GameFlixPortraitArtPathVar]</texture>
 						<bordertexture border="50">listpanel_back.png</bordertexture>
