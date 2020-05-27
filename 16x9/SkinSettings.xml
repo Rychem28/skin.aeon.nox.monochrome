@@ -286,8 +286,8 @@
 						<control type="radiobutton" id="1019">
 							<include>SettingsButtonCommonValues</include>
 							<label>$LOCALIZE[32046]</label>
-							<onclick>Skin.ToggleSetting(Disable.ShowHomeButtons)</onclick>
-							<selected>!Skin.HasSetting(Disable.ShowHomeButtons)</selected>
+							<onclick>Skin.ToggleSetting(Enable.ShowHomeButtons)</onclick>
+							<selected>Skin.HasSetting(Enable.ShowHomeButtons)</selected>
 						</control>						
 					</control>
 					<control type="grouplist" id="9002">

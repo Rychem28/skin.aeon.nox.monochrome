@@ -2315,7 +2315,7 @@
 	<variable name="BackGroundDiffuseVar">
 		<value condition="Window.IsActive(pictures) + !String.IsEmpty(ListItem.PictureDate)">FFFFFFFF</value>
 		<value condition="Window.IsActive(weather)">$VAR[WeatherBackgroundColor]</value>		
-		<value condition="!String.Contains(Container.ListItem.Property(background),colourbackgrounds) + [Window.IsActive(home) | Control.HasFocus(1) | Control.HasFocus(2) | Control.HasFocus(3)]">$VAR[SkinBackgroundColor]</value>
+		<value condition="!String.Contains(Container.ListItem.Property(background),colourbackgrounds) + [Window.IsActive(home) | Control.HasFocus(1) | Control.HasFocus(2) | Control.HasFocus(3)] + String.IsEmpty(ListItem.Art(fanart))">$VAR[SkinBackgroundColor]</value>
 		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + !String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$VAR[MusicRightListDimmerVar]</value>
 		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + !String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[MusicRightListDimmerVar]</value>
 		<value condition="Control.IsVisible(806) + Skin.HasSetting(Enable.MusicRightListLogoBackground) + String.IsEmpty(ListItem.Art(albumartist.clearlogo)) + String.IsEmpty(ListItem.Art(albumartist.fanart))">$VAR[SkinBackgroundColor]</value>

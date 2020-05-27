@@ -10,7 +10,7 @@
 			<onup>9000</onup>
 			<viewtype>list</viewtype>
 			<ondown condition="Control.IsVisible(90020) + Skin.HasSetting(centermainmenu)">90020</ondown>
-			<ondown condition="!Control.IsVisible(90020) | !Skin.HasSetting(centermainmenu) + Skin.HasSetting(Disable.ShowHomeButtons)">1</ondown>
+			<ondown condition="Skin.HasSetting(Enable.ShowHomeButtons)">1</ondown>
 			<pagecontrol />
 			<scrolltime tween="quadratic" easing="out">300</scrolltime>
 			<focusposition>2</focusposition>
@@ -122,7 +122,7 @@
 				<control type="group">
 					<left>25</left>
 					<top>165</top>
-					<visible>!Skin.HasSetting(Disable.ShowHomeButtons)</visible>
+					<visible>Skin.HasSetting(Enable.ShowHomeButtons)</visible>
 					<control type="button" id="1">
 						<description>Power Button</description>
 						<width>150</width>
