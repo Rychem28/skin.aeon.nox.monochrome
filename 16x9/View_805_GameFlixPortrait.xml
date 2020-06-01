@@ -72,10 +72,21 @@
 						<width>600</width>
 						<height>420</height>
 						<aspectratio align="left" aligny="top">stretch</aspectratio>
-						<texture background="true">$VAR[GameFlixPortraitArtPathVar]</texture>
+						<texture background="true">$VAR[GameFlixPortraitArtPathVar1]</texture>
 						<bordertexture border="50">listpanel_back.png</bordertexture>
 						<bordersize>35</bordersize>
-						<visible>Skin.HasSetting(Enable.GameFlixPortraitArt)</visible>
+						<visible>Skin.HasSetting(Enable.GameFlixPortraitArt1)</visible>
+					</control>
+					 <control type="image">
+						<left>610</left>
+						<top>160</top>
+						<width>500</width>
+						<height>415</height>
+						<aspectratio align="left" aligny="top">keep</aspectratio>
+						<texture background="true">$VAR[GameFlixPortraitArtPathVar2]</texture>
+						<bordertexture border="50">listpanel_back.png</bordertexture>
+						<bordersize>35</bordersize>
+						<visible>Skin.HasSetting(Enable.GameFlixPortraitArt2)</visible>
 					</control>
                 </control>
 				<control type="fixedlist" id="805">

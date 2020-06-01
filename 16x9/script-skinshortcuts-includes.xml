@@ -15,7 +15,7 @@
 			<property name="path">ActivateWindow(Pictures,return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-1</property>
-			<property name="hasSubmenu">True</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
@@ -182,6 +182,9 @@
 			<label2 />
 			<icon>special://skin/extras/icons/DefaultAddonWeather.png</icon>
 			<thumb />
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/backgrounds/weather.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/backgrounds/weather.png</property>
+			<property name="InfoLine">20088</property>
 			<onclick condition="String.IsEqual(ListItem.Property(path),ActivateWindow(1129))">SetProperty(CustomSelectSearch,True,Home)</onclick>
 			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
@@ -203,17 +206,6 @@
 	</include>
 	<include />
 	<include name="skinshortcuts-submenu">
-		<item id="1">
-			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">1</property>
-			<label>$LOCALIZE[24001]</label>
-			<label2 />
-			<icon>special://skin/extras/icons/DefaultAddSource.png</icon>
-			<thumb />
-			<visible>[False] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1)</visible>
-			<onclick>noop</onclick>
-			<property name="isSubmenu">True</property>
-		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">2</property>
@@ -608,6 +600,111 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">7</property>
+			<label>Atari 2600</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a2600",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atari2600.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atari2600.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a2600",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a2600",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">7</property>
+			<label>Atari 5200</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a5200",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atari5200.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atari5200.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a5200",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a5200",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">7</property>
+			<label>Atari 7800</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a7800",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atari7800.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atari7800.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a7800",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=a7800",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">7</property>
+			<label>Atari Jaguar</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=jaguar",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atarijaguar.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/atarijaguar.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=jaguar",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=jaguar",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">7</property>
+			<label>Coleco ColecoVision</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=coleco",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/colecovisioncoleco.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/colecovisioncoleco.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=coleco",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=coleco",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">7</property>
+			<label>Mattel Intellivision</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=intv",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/mattelintellivision.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/mattelintellivision.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=intv",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=intv",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">7</property>
+			<label>NEC Turbografx 16</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=tg16",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/necturbografx16.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/necturbografx16.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=tg16",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=tg16",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">7</property>
 			<label>Nintendo Entertainment System</label>
 			<label2>Favourite</label2>
 			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
@@ -620,8 +717,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">7</property>
 			<label>Nintendo SNES</label>
 			<label2>Favourite</label2>
@@ -635,8 +732,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">7</property>
 			<label>Sega Master System</label>
 			<label2>Favourite</label2>
@@ -650,8 +747,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">7</property>
 			<label>Sega MegaDrive/Genesis cartridges</label>
 			<label2>Favourite</label2>
@@ -665,8 +762,38 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">7</property>
+			<label>Sega 32X</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=32x",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/sega32x.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/sega32x.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=32x",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=32x",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="13">
+			<property name="id">$NUMBER[13]</property>
+			<property name="mainmenuid">7</property>
+			<label>Sega CD</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=segacd",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/segacd.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/segacd.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=segacd",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=segacd",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="14">
+			<property name="id">$NUMBER[14]</property>
 			<property name="mainmenuid">7</property>
 			<label>NEC Turbografx 16 cartridges</label>
 			<label2>Favourite</label2>
@@ -677,6 +804,21 @@
 			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/necturbografx16.png</property>
 			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=tg16",return)</onclick>
 			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=tg16",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="15">
+			<property name="id">$NUMBER[15]</property>
+			<property name="mainmenuid">7</property>
+			<label>Sony Playstation</label>
+			<label2>Favourite</label2>
+			<icon>special://skin/extras/icons/DefaultFolder.png</icon>
+			<thumb />
+			<property name="translatedPath">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=psx",return)</property>
+			<property name="background">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/sonyplaystation.png</property>
+			<property name="backgroundName">/home/laptopcas/.kodi/addons/skin.aeon.nox.monochrome/colourbackgrounds/sonyplaystation.png</property>
+			<onclick>ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=psx",return)</onclick>
+			<property name="path">ActivateWindow(10001,"plugin://plugin.program.AML/?catalog=SL&amp;category=psx",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mame)</visible>
 			<property name="isSubmenu">True</property>
 		</item>

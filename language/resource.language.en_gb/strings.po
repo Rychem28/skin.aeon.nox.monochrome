@@ -3195,8 +3195,8 @@ msgid "Show selected buttons on the home page for power/settings/addons"
 msgstr "Show selected buttons on the home page for power/settings/addons"
 
 msgctxt "#32048"
-msgid "GameFlix Secondary Art"
-msgstr "GameFlix Secondary Art"
+msgid "Display Primary Game Art"
+msgstr "Display Primary Game Art"
 
 msgctxt "#32049"
 msgid "GameFlix MAME"
@@ -3205,3 +3205,11 @@ msgstr "GameFlix MAME"
 msgctxt "#32050"
 msgid "Display Cover Template (for missing art)"
 msgstr "Display Cover Template (for missing art)"
+
+msgctxt "#32051"
+msgid "Display 2nd Game Art"
+msgstr "Display 2nd Game Art"
+
+msgctxt "#32052"
+msgid "Display Game Clearlogo"
+msgstr "Display Game Clearlogo"

@@ -253,7 +253,7 @@
 					<label>$INFO[ListItem.Property(buttons)] buttons</label>
 					<font>font10_barcade</font>
 					<visible>!String.IsEmpty(ListItem.Property(buttons))</visible>
-				</control>                
+				</control>
             </control>
 			<control type="group"> <!-- game genre for MAME, console logo for consoles -->
 				<height>125</height>
@@ -271,15 +271,16 @@
 					<font>font12_barcade</font>
 					<visible>String.IsEmpty(Control.GetLabel(800028))</visible>
 				</control>
-			</control>
-				<control type="image">
-					<height>125</height>
-					<width>400</width>
-			    	<left>1025</left>
-					<bordersize>2</bordersize>
-					<aspectratio align="left">keep</aspectratio>
-					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
-				</control>	
+    		</control>
+    		<control type="image">
+				<height>125</height>
+				<width>400</width>
+				<left>1025</left>
+				<bordersize>2</bordersize>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>Skin.HasSetting(Enable.GameFlixPortraitGameLogo)</visible>				
+			</control>	
 			<control type="group"> <!-- star rating -->
                 <left>1310</left>
                 <visible>[Control.IsVisible(803) | Control.IsVisible(804)] + !String.IsEmpty(ListItem.Title)</visible>
