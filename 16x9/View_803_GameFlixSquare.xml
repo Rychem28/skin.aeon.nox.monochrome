@@ -11,75 +11,83 @@
                     <top>50</top>
                     <height>124</height>
                     <scroll>true</scroll>
-                    <width>1600</width> <!-- change to fit with new window -->
+                    <width>1600</width>
                     <font>font_musicviz2</font>
                     <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
      			<control type="group"> <!-- information box -->
-					<left>10</left>
+					<left>25</left>
 					<top>175</top>
-					<width>1000</width>
-					<height>220</height>
+					<width>1920</width>
+					<height>410</height>
 					<include>VisibleFadeAnimation</include>
-					<control type="group">
+					<control type="grouplist">
+                        <orientation>horizontal</orientation>
 						<control type="grouplist">
+							<orientation>vertical</orientation>
+							<width>780</width>
+							<visible>Skin.HasSetting(Enable.GameFlixSquareInfo)</visible>
 							<control type="label">
 								<label>[COLOR $VAR[ThemeLabelColor]]MAME Version Added:[/COLOR][CR]$INFO[ListItem.Property(veradded)]</label>
-								<width>800</width>
-								<include>DefaultButtonsValues</include>
+								<height>100</height>
 								<textcolor>grey</textcolor>
-								<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+								<visible>!String.Contains(ListItem.Property(history),"not found") + Skin.HasSetting(Enable.GameFlixSquareInfo) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
 							</control>
 							<control type="label">
 								<label>[COLOR $VAR[ThemeLabelColor]]Display Type:[/COLOR][CR]$VAR[AMLDTypeVar]/$VAR[AMLDRotateVar]</label>
-								<width>800</width>
-								<include>DefaultButtonsValues</include>
+								<height>100</height>
 								<textcolor>grey</textcolor>								
-								<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+								<visible>!String.Contains(ListItem.Property(history),"not found") + Skin.HasSetting(Enable.GameFlixSquareInfo) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
+							</control>
+							<control type="textbox">
+								<label>$INFO[ListItem.Plot]</label>
+								<width>800</width>
+								<height>420</height>
+								<font>font15</font>
+								<textcolor>grey</textcolor>
+								<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+								<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
+								<visible>!String.IsEqual(ListItem.Property(platform),MAME) + Skin.HasSetting(Enable.GameFlixSquareInfo)</visible>
+							</control>
+							<control type="textbox">
+								<width>800</width>	
+								<height>420</height>
+								<label>$INFO[ListItem.Property(history)]</label>
+								<font>font15</font>
+								<textcolor>grey</textcolor>
+								<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+								<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
+								<visible>!String.Contains(ListItem.Property(history),"not found") + Skin.HasSetting(Enable.GameFlixSquareInfo) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
 							</control>
 						</control>
- 						<control type="textbox">
-							<top>180</top>	
-							<left>15</left>
-							<label>$INFO[ListItem.Plot]</label>
-							<width>800</width>
-							<height>280</height>
-							<font>font15</font>
-							<textcolor>grey</textcolor>
-							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
-							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
-							<visible>!String.IsEqual(ListItem.Property(platform),MAME) + Skin.HasSetting(Enable.GameFlixSquareInfo)</visible>
+						<control type="group">
+							<width>620</width>
+							<control type="image">
+								<width>640</width>
+								<height>420</height>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true">$VAR[GameFlixSquareArtPathVar1]</texture>
+								<bordertexture border="35">listpanel_back.png</bordertexture>
+								<bordersize>35</bordersize>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1)</visible>
+							</control>
 						</control>
-						<control type="textbox">
-							<top>180</top>	
-							<left>15</left>
-							<label>$INFO[ListItem.Property(history)]</label>
-							<width>800</width>
-							<height>280</height>
-							<font>font15</font>
-							<textcolor>grey</textcolor>
-							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
-							<animation effect="slide" start="0" end="0,40" time="620" tween="cubic" easing="inout">Conditional</animation>
-							<visible>!String.Contains(ListItem.Property(history),"not found") + Skin.HasSetting(Enable.GameFlixSquareInfo) + String.IsEqual(ListItem.Property(platform),MAME)</visible>
+						<control type="group">
+							<control type="image">
+								<width>500</width>
+								<height>375</height>
+								<aspectratio>keep</aspectratio>
+								<texture background="true">$VAR[GameFlixSquareArtPathVar2]</texture>
+								<bordertexture border="35">listpanel_back.png</bordertexture>
+								<bordersize>35</bordersize>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt2)</visible>
+							</control>
 						</control>
 					</control>
 				</control>
-				<control type="group"> <!-- extra art items -->
-					 <control type="image">
-						<left>10</left>
-						<top>160</top>
-						<width>600</width>
-						<height>420</height>
-						<aspectratio align="left" aligny="top">stretch</aspectratio>
-						<texture background="true">$VAR[GameFlixSquareArtPathVar]</texture>
-						<bordertexture border="30">listpanel_back.png</bordertexture>
-						<bordersize>30</bordersize>
-						<visible>Skin.HasSetting(Enable.GameFlixSquareArt)</visible>
-					</control>
-                </control>
 				<control type="fixedlist" id="803">
-					<top>490</top>
+					<top>505</top>
 					<width>1920</width>
 					<height>600</height>
 					<visible>true</visible>
@@ -94,22 +102,22 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>2</preloaditems>
 					<focusposition>0</focusposition>
-					<itemlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="auto" width="390">
+					<itemlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="400" width="400">
 						<control type="group">
 							<include>GameFlixPoster</include>
 							<include>GameFlixPosterReflection</include>
 							<control type="image">
 								<left>10</left>
 								<top>75</top>
-								<width>390</width>
-								<height>390</height>
+								<width>400</width>
+								<height>400</height>
 								<texture border="1">black.png</texture>
 								<colordiffuse>$VAR[GameFlixSquareDimmerVar]</colordiffuse>
 								<bordersize>20</bordersize>
 							</control>
 						</control>	
 					</itemlayout>
-					<focusedlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="390" width="390">
+					<focusedlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="400" width="400">
 						<control type="group">
 							<include>GameFlixPoster</include>
 							<include>GameFlixPosterReflection</include>
@@ -140,8 +148,8 @@
 		<control type="image">
 			<left>10</left>
 			<top>75</top>
-			<width>390</width>
-			<height>390</height>
+			<width>400</width>
+			<height>400</height>
 			<texture background="true">$INFO[Listitem.Icon]</texture> <!-- configurable image in add-on -->
 			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
 			<bordersize>20</bordersize>
@@ -149,9 +157,9 @@
 		<control type="group">
 			<left>10</left>
 			<top>75</top>
-			<width>390</width>
-			<height>390</height>
-			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png) + Skin.HasSetting(Enable.GameFlixBoxBLank)</visible>		
+			<width>400</width>
+			<height>400</height>
+			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png) + Skin.HasSetting(Enable.GameFlixSquareBoxBLank)</visible>		
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(title)]</texture>
@@ -180,9 +188,7 @@
 			<width>350</width>
 			<height>402</height>
 			<texture background="true"  flipy="true" diffuse="thumbs/thumb_reflect.png">$INFO[ListItem.Genre,logos/gamebox/,.png]</texture>
-			<bordertexture border="20">thumbs/thumb_shadow_aa.png</bordertexture>
-			<bordersize>20</bordersize>
-			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png) + Skin.HasSetting(Enable.GameFlixBoxBLank)</visible>
+			<visible>String.IsEqual(ListItem.Icon,defaultprogram.png) + Skin.HasSetting(Enable.GameFlixSquareBoxBLank)</visible>
 		</control>	
 	</include>
 </includes>

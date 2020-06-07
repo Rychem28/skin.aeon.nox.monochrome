@@ -200,10 +200,11 @@
 		<control type="group"> <!--bottom infos for AML/Steam PLugins -->
 			<include>BottomScrollbars</include>
 			<visible>Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(805) | Control.IsVisible(811)</visible>
-			<top>950</top>
-			<left>30</left>
+			<top>970</top>
+			<height>115</height>
 			<control type="group"> <!-- label display, text if image doesn't work -->
-				<width>198</width>
+				<width>200</width>
+				<left>30</left>		
 				<visible>!String.IsEmpty(ListItem.Studio)</visible>
 				<control type="image" id="800011">
 					<colordiffuse>grey</colordiffuse>
@@ -221,76 +222,88 @@
 					<visible>String.IsEmpty(Control.GetLabel(800011))</visible>
 				</control>
 			</control>
-			<control type="image">
-				<left>175</left>
-				<height>125</height>
-				<width>250</width>
-				<aspectratio align="left">keep</aspectratio>
-				<bordersize>2</bordersize>
-				<texture>$VAR[AMLNPlayerVar]</texture>
-			</control>
-            <control type="group"> <!-- controller type for MAME, controller image for consoles -->
-                <left>450</left>
-                <control type="image">
-                    <height>125</height>
-                    <width>300</width>
-                    <bordersize>2</bordersize>
-                    <aspectratio align="left">keep</aspectratio>
-                    <texture>$VAR[AMLControlVar]</texture>
-                </control>
-                <control type="label">
-					<right>1210</right>
-                    <top>25</top>
-					<align>right</align>
-					<label>$INFO[ListItem.Property(ways)]-way</label>
-					<font>font10_barcade</font>
-					<visible>String.Contains(ListItem.Plot,Joy) + !String.Contains(ListItem.Plot,Dial) + !String.Contains(ListItem.Plot,Paddle) + !String.Contains(ListItem.Plot,Trackball)</visible>
-				</control>
-                <control type="label">
-					<right>1220</right>
-                    <top>90</top>
-					<align>right</align>
-					<label>$INFO[ListItem.Property(buttons)] buttons</label>
-					<font>font10_barcade</font>
-					<visible>!String.IsEmpty(ListItem.Property(buttons))</visible>
-				</control>
-            </control>
-			<control type="group"> <!-- game genre for MAME, console logo for consoles -->
-				<height>125</height>
-				<width>300</width>
-				<left>725</left>
-				<control type="image" id="800028">
+            <control type="grouplist"> <!-- controller type for MAME -->
+                <left>200</left>
+				<orientation>horizontal</orientation>
+				<control type="image">
+					<width>300</width>
+					<aspectratio>keep</aspectratio>
 					<bordersize>2</bordersize>
-					<aspectratio align="left">scale</aspectratio>
-					<texture>$VAR[AMLGenreVar]</texture>
+					<texture>$VAR[AMLNPlayerVar]</texture>
 				</control>
-				<control type="label">
-					<top>-50</top>
-					<align>left</align>
-					<label>$INFO[ListItem.Genre]</label>
-					<font>font12_barcade</font>
-					<visible>String.IsEmpty(Control.GetLabel(800028))</visible>
+				<control type="group">
+					<width>275</width>
+					<control type="image">
+						<height>115</height>
+						<width>250</width>
+						<bordersize>2</bordersize>
+						<aspectratio align="left">keep</aspectratio>
+						<texture>$VAR[AMLControlVar]</texture>
+						<visible>String.IsEqual(ListItem.Property(platform),MAME)</visible>
+					</control>
+					<control type="image" id="800028">
+						<width>250</width>						
+						<bordersize>2</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture>$VAR[AMLGenreVar]</texture>
+					</control>					
+					<control type="label">
+						<top>50</top>
+						<right>60</right>
+						<height>35</height>
+						<align>right</align>
+						<label>$INFO[ListItem.Property(ways)]-way</label>
+						<font>font10_barcade</font>
+						<visible>String.Contains(ListItem.Plot,Joy) + !String.Contains(ListItem.Plot,Dial) + !String.Contains(ListItem.Plot,Paddle) + !String.Contains(ListItem.Plot,Trackball)</visible>
+					</control>
+					<control type="label">
+						<top>77</top>
+						<right>64</right>
+						<height>35</height>
+						<align>right</align>						
+						<label>$INFO[ListItem.Property(buttons)] buttons</label>
+						<font>font10_barcade</font>
+						<visible>!String.IsEmpty(ListItem.Property(buttons))</visible>
+					</control>
+				</control>					
+				<control type="grouplist"> <!-- game genre for MAME, cartridge for consoles -->
+					<orientation>horizontal</orientation>
+					<width>500</width>
+					<height>110</height>
+					<control type="label">
+						<top>40</top>
+						<width>250</width>
+						<align>left</align>
+						<wraptext>true</wraptext>
+						<label>$INFO[ListItem.Genre]</label>
+						<font>font12_barcade</font>
+						<visible>String.IsEmpty(Control.GetLabel(800028))</visible>
+					</control>
+					<control type="image">
+						<width>200</width>
+						<aspectratio align="left" aligny="top">keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(cartridge)]</texture>
+						<visible>[Skin.HasSetting(Enable.GameFlixSquareCart) + Control.IsVisible(803)] | [Skin.HasSetting(Enable.GameFlixLandscapeCart) + Control.IsVisible(804)] | [Skin.HasSetting(Enable.GameFlixPortraitCart) + Control.IsVisible(805)]</visible>
+					</control>
+					<control type="image">
+						<width>250</width>
+						<bordersize>2</bordersize>
+						<aspectratio align="left">keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+						<visible>[Skin.HasSetting(Enable.GameFlixSquareGameLogo) + Control.IsVisible(803)] | [Skin.HasSetting(Enable.GameFlixLandscapeGameLogo) + Control.IsVisible(804)] | [Skin.HasSetting(Enable.GameFlixPortraitGameLogo) + Control.IsVisible(805)] | [Skin.HasSetting(Enable.GameFlixMAMEGameLogo) + Control.IsVisible(811)]</visible>				
+					</control>
 				</control>
-    		</control>
-    		<control type="image">
-				<height>125</height>
-				<width>400</width>
-				<left>1025</left>
-				<bordersize>2</bordersize>
-				<aspectratio align="left">keep</aspectratio>
-				<texture>$INFO[ListItem.Art(clearlogo)]</texture>
-				<visible>Skin.HasSetting(Enable.GameFlixPortraitGameLogo)</visible>				
 			</control>	
 			<control type="group"> <!-- star rating -->
-                <left>1310</left>
-                <visible>[Control.IsVisible(803) | Control.IsVisible(804)] + !String.IsEmpty(ListItem.Title)</visible>
+                <left>1320</left>
+                <visible>[Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(805) | Control.IsVisible(811)] + !String.IsEmpty(ListItem.Title)</visible>
                 <control type="image">
                     <colordiffuse>$VAR[RatingStarBackgroundColor]</colordiffuse>
                     <width>200</width>
                     <fadetime>50</fadetime>
                     <include>MediaFlagValues</include>
                     <texture>flags/rating/empty.png</texture>
-                    <visible>!String.IsEmpty(ListItem.Property(rating)) + Control.IsVisible(803)</visible>                    
+                    <visible>!String.IsEmpty(ListItem.Property(rating))</visible>                    
                 </control>
                 <control type="image">
                     <colordiffuse>$VAR[NoRatingStarColor]</colordiffuse>
@@ -298,7 +311,7 @@
                     <fadetime>50</fadetime>
                     <include>MediaFlagValues</include>
                     <texture>flags/rating/empty.png</texture>
-                    <visible>String.IsEmpty(ListItem.Property(rating)) + Control.IsVisible(803)</visible>
+                    <visible>String.IsEmpty(ListItem.Property(rating))</visible>
                 </control>
                 <control type="image">
                     <colordiffuse>$VAR[RatingStarColor]</colordiffuse>
@@ -310,7 +323,7 @@
             </control>
 			<control type="label">
 				<label>$INFO[ListItem.Year]</label> 
-				<left>1605</left>
+				<left>1610</left>
 				<font>font52_bold</font>
 				<include>MediaFlagValues</include>
 			</control>

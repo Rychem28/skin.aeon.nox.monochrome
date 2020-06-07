@@ -3179,8 +3179,8 @@ msgid "Display Coloured Game Controller (Consoles)"
 msgstr "Display Coloured Game Controller (Consoles)"
 
 msgctxt "#32044"
-msgid "Display Coloured Game Logo (Consoles)"
-msgstr "Display Coloured Game Logo (Consoles)"
+msgid "Display Coloured Console Logo"
+msgstr "Display Coloured Console Logo"
 
 msgctxt "#32045"
 msgid "Enable Game Trailers"
@@ -3213,3 +3213,11 @@ msgstr "Display 2nd Game Art"
 msgctxt "#32052"
 msgid "Display Game Clearlogo"
 msgstr "Display Game Clearlogo"
+
+msgctxt "#32053"
+msgid "Display Game Cartridge"
+
+msgctxt "#32054"
+msgid "  --Type"
+msgstr "  --Type"
+msgstr "Display Game Cartridge"

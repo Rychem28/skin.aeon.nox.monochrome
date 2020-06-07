@@ -331,19 +331,20 @@
 		<control type="group"> <!-- Bottom display for 807 MusicFlix-->
 			<visible>Control.IsVisible(807) + Container.Content(albums)</visible>
 			<!-- Scrollbars -->
+			<include>ViewAnimation</include>
 			<include>BottomScrollbars</include>
 			<visible>!Window.IsActive(addoninformation)</visible>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,806" start="0,0">WindowClose</animation>
 			<top>970</top>
-			<left>30</left>
-			<control type=group>
+			<control type="group">
 				<visible>Control.IsVisible(807)</visible>
 				<control type="group"> <!-- label display, text if image doesn't work -->
 					<width>198</width>
 					<visible>!String.IsEmpty(ListItem.Property(Album_Label))</visible>
 					<control type="image" id="800011">
+						<left>30</left>
 						<colordiffuse>grey</colordiffuse>
 						<include>MediaFlagValues</include>
 						<bordersize>2</bordersize>
@@ -447,7 +448,7 @@
 					</control>
 				</control>
 				<control type="group"> <!-- star rating -->
-					<left>1310</left>
+					<left>1320</left>
 					<visible>!String.IsEmpty(ListItem.Album)</visible>					
 					<control type="image">
 						<colordiffuse>$VAR[RatingStarBackColor]</colordiffuse>
@@ -475,7 +476,7 @@
 				<control type="label"> <!-- year at the bottom -->
 					<label>$INFO[Listitem.Year]</label>
 					<textcolor>grey</textcolor>
-					<left>1605</left>
+					<left>1610</left>
 					<font>font52_bold</font>
 					<include>MediaFlagValues</include>
 				</control>                
