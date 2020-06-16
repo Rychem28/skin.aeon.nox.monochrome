@@ -3175,12 +3175,12 @@ msgid "Display Flyer/Boxfront"
 msgstr "Display Flyer/Boxfront"
 
 msgctxt "#32043"
-msgid "  --Coloured Game Controller"
-msgstr "  --Coloured Game Controller"
+msgid "Display Coloured Game Controller (Consoles)"
+msgstr "Display Coloured Game Controller (Consoles)"
 
 msgctxt "#32044"
-msgid "  --Coloured Console Logo"
-msgstr "  --Coloured Console Logo"
+msgid "Display Coloured Console Logo"
+msgstr "Display Coloured Console Logo"
 
 msgctxt "#32045"
 msgid "Enable Game Trailers"
@@ -3211,21 +3211,13 @@ msgid "Display 2nd Game Art"
 msgstr "Display 2nd Game Art"
 
 msgctxt "#32052"
-msgid "  --Game Clearlogo"
-msgstr "  --Game Clearlogo"
+msgid "Display Game Clearlogo"
+msgstr "Display Game Clearlogo"
 
 msgctxt "#32053"
-msgid "  --Game Cartridge"
-msgstr "  --Game Cartridge"
+msgid "Display Game Cartridge"
 
 msgctxt "#32054"
 msgid "  --Type"
 msgstr "  --Type"
-
-msgctxt "#32055"
-msgid "  --Show on Main Page (Replaces Primary Game Art)"
-msgstr "  --Show on Main Page  (Replaces Primary Game Art)"
-
-msgctxt "#32056"
-msgid "Bottom Panel Items"
-msgstr "Bottom Panel Items"
+msgstr "Display Game Cartridge"

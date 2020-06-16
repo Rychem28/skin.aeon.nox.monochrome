@@ -2473,7 +2473,7 @@
 		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare2.Art),Flyer-Box)">$INFO[ListItem.Art(flyer)]</value>
 		<value condition="String.IsEqual(ListItem.Property(platform),MAME) + String.IsEqual(Skin.String(GameFlixSquare2.Art),Marquee)">$INFO[ListItem.Art(marquee)]</value>
 		<value condition="String.IsEqual(Skin.String(GameFlixSquare2.Art),Clearlogo)">$INFO[ListItem.Art(clearlogo)]</value>		
-	</variable>
+	</variable> 	
 	<!-- GameFlix Landscape Variables -->
 	<variable name="GameFlixLandscapeArtVar1">
 		<value condition="String.IsEmpty(Skin.String(GameFlixLandscape1.Art))">Skin.SetString(GameFlixLandscape1.Art,Snap)</value>
