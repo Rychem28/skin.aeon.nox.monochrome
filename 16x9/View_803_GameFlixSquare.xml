@@ -70,7 +70,7 @@
 								<texture background="true">back.png</texture>
 								<bordertexture border="35">listpanel_back.png</bordertexture>
 								<bordersize>35</bordersize>
-								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1) + !String.IsEmpty(ListItem.Title)</visible>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1)</visible>
 							</control>							
 							<control type="image">
 								<top>35</top>
@@ -79,25 +79,25 @@
 								<height>350</height>
 								<aspectratio>stretch</aspectratio>
 								<texture background="true">$VAR[GameFlixSquareArtPathVar1]</texture>
-								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1)  + !Player.HasVideo + !String.IsEmpty(ListItem.Title)</visible>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1)  + !Player.HasVideo</visible>
 							</control>
 							<control type="videowindow">
 								<top>35</top>
 								<left>15</left>
 								<width>640</width>
 								<height>345</height>
-								<visible>Skin.HasSetting(Enable.GameFlixSquareTrailer) + Player.HasVideo + !String.IsEmpty(ListItem.Title) </visible>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareTrailer) + Player.HasVideo</visible>
 							</control>
 						</control>
 						<control type="group">
 							<control type="image">
-								<width>640</width>
+								<width>500</width>
 								<height>400</height>
-								<aspectratio align="left" aligny="top">keep</aspectratio>
+								<aspectratio>keep</aspectratio>
 								<texture background="true">$VAR[GameFlixSquareArtPathVar2]</texture>
 								<bordertexture border="35">listpanel_back.png</bordertexture>
 								<bordersize>35</bordersize>
-								<visible>Skin.HasSetting(Enable.GameFlixSquareArt2) + !String.IsEmpty(ListItem.Title)</visible>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt2)</visible>
 							</control>
 						</control>
 					</control>
