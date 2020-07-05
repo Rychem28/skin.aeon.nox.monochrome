@@ -106,7 +106,7 @@
 					<top>505</top>
 					<width>1920</width>
 					<height>600</height>
-					<visible>$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]</visible>
+					<visible>true</visible>
 					<onleft>805</onleft>
 					<onright>805</onright>
 					<onup>SetProperty(MediaMenu,True,Home)</onup>
@@ -118,7 +118,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>2</preloaditems>
 					<focusposition>0</focusposition>
-					<itemlayout height="400" width="300">
+					<itemlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="400" width="300">
 						<control type="group">
 							<include>GameFlixPosterPortrait</include>
 							<include>GameFlixPosterReflectionPortrait</include>
@@ -133,7 +133,7 @@
 							</control>
 						</control>	
 					</itemlayout>
-					<focusedlayout height="400" width="300">
+					<focusedlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="400" width="300">
 						<control type="group">
 							<include>GameFlixPosterPortrait</include>
 							<include>GameFlixPosterReflectionPortrait</include>
