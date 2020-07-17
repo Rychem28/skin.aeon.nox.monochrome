@@ -106,10 +106,9 @@
 					<top>505</top>
 					<width>1920</width>
 					<height>600</height>
-					<visible>true</visible>
+					<visible>$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]</visible>
 					<onleft>803</onleft>
 					<onright>803</onright>
-					<onup>SetProperty(MediaMenu,True,Home)</onup>
 					<onup>SetFocus(9050)</onup>
 					<ondown condition="Control.IsVisible(80360)">80360</ondown>
 					<ondown condition="!Control.IsVisible(80360)">4400</ondown>
@@ -118,7 +117,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>2</preloaditems>
 					<focusposition>0</focusposition>
-					<itemlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="400" width="400">
+					<itemlayout height="400" width="400">
 						<control type="group">
 							<include>GameFlixPoster</include>
 							<include>GameFlixPosterReflection</include>
@@ -133,7 +132,7 @@
 							</control>
 						</control>	
 					</itemlayout>
-					<focusedlayout condition="$EXP[PluginSteamLauncher] | $EXP[PluginAdvancedLauncher]" height="400" width="400">
+					<focusedlayout height="400" width="400">
 						<control type="group">
 							<include>GameFlixPoster</include>
 							<include>GameFlixPosterReflection</include>
