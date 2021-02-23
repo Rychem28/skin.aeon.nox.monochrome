@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="skin.aeon.nox.monochrome" version="1.0.0" name="Aeon Nox Monochrome" provider-name="Rychem">
 	<requires>
-		<import addon="xbmc.gui" version="5.14.0" />
+		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skinshortcuts" version="1.0.10" />
 		<import addon="service.library.data.provider" version="0.0.7" />
-		<import addon="script.grab.fanart" version="0.12.8" />
 		<import addon="metadata.universal" version="5.3.0" />
 		<import addon="script.skin.helper.colorpicker" version="1.0.13" />
 		<import addon="script.skin.info.service" version="1.0.7" />

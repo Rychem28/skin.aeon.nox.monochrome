@@ -64,24 +64,40 @@
 						<control type="group">
 							<width>620</width>
 							<control type="image">
-								<width>640</width>
+								<width>645</width>
 								<height>420</height>
 								<aspectratio>stretch</aspectratio>
-								<texture background="true">$VAR[GameFlixSquareArtPathVar1]</texture>
+								<texture background="true">back.png</texture>
 								<bordertexture border="35">listpanel_back.png</bordertexture>
 								<bordersize>35</bordersize>
-								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1)</visible>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1) + !String.IsEmpty(ListItem.Title)</visible>
+							</control>							
+							<control type="image">
+								<top>35</top>
+								<left>35</left>
+								<width>580</width>
+								<height>350</height>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true">$VAR[GameFlixSquareArtPathVar1]</texture>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt1)  + !Player.HasVideo + !String.IsEmpty(ListItem.Title)</visible>
+							</control>
+							<control type="videowindow">
+								<top>35</top>
+								<left>15</left>
+								<width>640</width>
+								<height>345</height>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareTrailer) + Player.HasVideo + !String.IsEmpty(ListItem.Title) </visible>
 							</control>
 						</control>
 						<control type="group">
 							<control type="image">
-								<width>500</width>
-								<height>375</height>
-								<aspectratio>keep</aspectratio>
+								<width>640</width>
+								<height>400</height>
+								<aspectratio align="left" aligny="top">keep</aspectratio>
 								<texture background="true">$VAR[GameFlixSquareArtPathVar2]</texture>
 								<bordertexture border="35">listpanel_back.png</bordertexture>
 								<bordersize>35</bordersize>
-								<visible>Skin.HasSetting(Enable.GameFlixSquareArt2)</visible>
+								<visible>Skin.HasSetting(Enable.GameFlixSquareArt2) + !String.IsEmpty(ListItem.Title)</visible>
 							</control>
 						</control>
 					</control>
@@ -121,23 +137,18 @@
 						<control type="group">
 							<include>GameFlixPoster</include>
 							<include>GameFlixPosterReflection</include>
-							<!-- Trailer Trigger - place holder moved to My Programs
 							<control type="button">
 								<left>0</left>
 								<top>0</top>
 								<width>1</width>
 								<height>1</height>
-								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)">PlayMedia($INFO[ListItem.trailer],1)</onfocus>
-								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)">PlayerControl(RepeatOff)</onfocus>
-								<!-- <onfocus condition="!Player.Muted"></onfocus>
+								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixSquareTrailerMain) + !Player.HasAudio">PlayMedia($INFO[ListItem.trailer],1)</onfocus>
+								<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixSquareTrailerMain) + !Player.HasAudio">PlayerControl(RepeatOff)</onfocus>
 								<onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
-								<!-- <onunfocus>Action(Mute)</onunfocus> 
-								<texturefocus>-</texturefocus>
-								<texturenofocus>-</texturenofocus>
 								<animation type="Focus">
 								<effect type="fade" delay="250" start="0" end="100" />
 								</animation>
-							</control>-->
+							</control>
 						</control>
 					</focusedlayout>
 				</control>

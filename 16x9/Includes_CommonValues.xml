@@ -770,7 +770,7 @@
 	<!-- EXP -->
 	<expression name="HasVerticalMenuWithExtended">String.IsEqual(Skin.String(MainMenu.Layout),vertical) + [String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus] | [String.Contains(Container(9000).ListItem.Property(widgetStyle.2),Extended) + ControlGroup(90020).HasFocus]</expression>
 	<expression name="WidgetFanartVisible">[[String.IsEmpty(Container(9000).ListItem.Property(widgetDisableFanart)) + ControlGroup(90010).HasFocus] | [String.IsEmpty(Container(9000).ListItem.Property(widgetDisableFanart.2)) + ControlGroup(90020).HasFocus]]</expression>
-	<expression name="PluginAdvancedLauncher">String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.StartsWith(Container.FolderPath,plugin://plugin.program.AML/)</expression>
+	<expression name="PluginAdvancedLauncher">String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher) | String.StartsWith(Container.FolderPath,plugin://plugin.program.AML)</expression>
 	<expression name="PluginSteamLauncher">String.StartsWith(Container.FolderPath,plugin://plugin.program.steam.library/)</expression>
 	<expression name="PluginSpecialFeatures">String.StartsWith(Container.FolderPath,plugin://plugin.video.specialfeatures/)</expression>
 	<expression name="PluginNetflix">String.StartsWith(Container.FolderPath,plugin://plugin.video.netflix/)</expression>

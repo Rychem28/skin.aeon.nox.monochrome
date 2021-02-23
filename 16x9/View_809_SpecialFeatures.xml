@@ -22,17 +22,17 @@
 				<font>font48_bold</font>
 				<textcolor>$VAR[HighlightBarColor]</textcolor>
 				<label>$INFO[ListItem.Tagline]</label>
+				<visible>!String.Contains(ListItem.Tagline,None)</visible>
 			</control>
 			<control type="label">
 				<left>25</left>
 				<top>250</top>
-				<width>90</width>
+				<width>900</width>
 				<height>68</height>
 				<font>font30</font>
 				<textcolor>grey</textcolor>
 				<label>$INFO[ListItem.Year]</label>
-				<visible>!ListItem.IsParentFolder</visible>
-				<visible>!ListItem.IsCollection</visible>
+				<visible>!String.Contains(ListItem.Year,None)</visible>
 			</control>			
 			<control type="group">
 				<animation effect="slide" end="0,-203.375" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>

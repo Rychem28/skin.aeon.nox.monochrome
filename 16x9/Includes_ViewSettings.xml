@@ -946,7 +946,7 @@
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixSquareArt1)</onclick>
-			<onclick>Skin.SetString(GameFlixSquare1.Art,Snap)</onclick>
+			<onclick condition="Skin.HasSetting(Enable.GameFlixSquareTrailerMain)">Skin.ToggleSetting(Enable.GameFlixSquareTrailerMain)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixSquareArt1)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
@@ -971,6 +971,11 @@
 			<onclick>$VAR[GameFlixSquareArtVar2]</onclick>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
+		<control type="label" id="1523">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32056]</label>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>				
+		</control>		
 		<control type="radiobutton" id="1516">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32052]</label>
@@ -1009,10 +1014,17 @@
 		<control type="radiobutton" id="1521">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32045]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
-			<selected>Skin.HasSetting(Enable.GameFlixTrailer)</selected>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixSquareTrailer)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixSquareTrailer)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>			
 		</control>
+		<control type="radiobutton" id="1522">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32055]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixSquareTrailerMain)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixSquareTrailerMain)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixSquareTrailer) + Skin.HasSetting(Enable.GameFlixSquareArt1)</visible>	
+		</control>	
 	</include>
 	<include name="GameFlixLandscapeViewSettings">
 		<!-- GameFlix Landscape-->
@@ -1035,7 +1047,7 @@
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixLandscapeArt1)</onclick>
-			<onclick>Skin.SetString(GameFlixLandscape1.Art,Snap)</onclick>
+			<onclick condition="Skin.HasSetting(Enable.GameFlixLandscapeTrailerMain)">Skin.ToggleSetting(Enable.GameFlixLandscapeTrailerMain)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixLandscapeArt1)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
@@ -1060,6 +1072,11 @@
 			<onclick>$VAR[GameFlixLandscapeArtVar2]</onclick>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
+		<control type="label" id="1523">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32056]</label>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>				
+		</control>		
 		<control type="radiobutton" id="1516">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32052]</label>
@@ -1098,10 +1115,17 @@
 		<control type="radiobutton" id="1521">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32045]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
-			<selected>Skin.HasSetting(Enable.GameFlixTrailer)</selected>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixLandscapeTrailer)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixLandscapeTrailer)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>			
 		</control>
+		<control type="radiobutton" id="1522">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32055]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixLandscapeTrailerMain)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixLandscapeTrailerMain)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixLandscapeTrailer) + Skin.HasSetting(Enable.GameFlixLandscapeArt1)</visible>	
+		</control>	
 	</include>
 	<include name="GameFlixPortraitViewSettings">
 		<!-- GameFlix Portrait-->
@@ -1124,7 +1148,7 @@
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixPortraitArt1)</onclick>
-			<onclick>Skin.SetString(GameFlixPortrait1.Art,Snap)</onclick>
+			<onclick condition="Skin.HasSetting(Enable.GameFlixPortraitTrailerMain)">Skin.ToggleSetting(Enable.GameFlixPortraitTrailerMain)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixPortraitArt1)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
@@ -1148,6 +1172,11 @@
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixPortraitLabelVar2][/COLOR]</label2>
 			<onclick>$VAR[GameFlixPortraitArtVar2]</onclick>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
+		</control>
+		<control type="label" id="1523">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32056]</label>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>				
 		</control>
 		<control type="radiobutton" id="1516">
 			<include>ButtonCommonValues</include>
@@ -1187,10 +1216,17 @@
 		<control type="radiobutton" id="1521">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32045]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
-			<selected>Skin.HasSetting(Enable.GameFlixTrailer)</selected>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixPortraitTrailer)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixPortraitTrailer)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>			
 		</control>
+		<control type="radiobutton" id="1522">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32055]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixPortraitTrailerMain)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixPortraitTrailerMain)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixPortraitTrailer) + Skin.HasSetting(Enable.GameFlixPortraitArt1)</visible>	
+		</control>	
 	</include>
 	<include name="GameFlixMAMEViewSettings">
 		<!-- GameFlix MAME-->
@@ -1200,24 +1236,26 @@
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixMAMEDimmerLabelVar][/COLOR]</label2>
 			<onclick>SetProperty(CustomSelectGameFlixMAMEDimmer,True)</onclick>
 			<onclick>ActivateWindow(1129)</onclick>
+			<visible>$EXP[PluginAdvancedLauncher]</visible>			
 		</control>
 		<control type="radiobutton" id="1511">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[31604]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMEInfo)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixMAMEInfo)</selected>
+			<visible>$EXP[PluginAdvancedLauncher]</visible>			
 		</control>
 		<control type="radiobutton" id="1512">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32048]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMEArt1)</onclick>
-			<onclick>Skin.SetString(GameFlixMAME1.Art,Snap)</onclick>
+			<onclick condition="Skin.HasSetting(Enable.GameFlixMAMETrailerMain)">Skin.ToggleSetting(Enable.GameFlixMAMETrailerMain)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixMAMEArt1)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
 		<control type="button" id="1513">
 			<include>ButtonCommonValues</include>
-			<label>  --Type</label>
+			<label>$LOCALIZE[32054]</label>
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixMAMELabelVar1][/COLOR]</label2>
 			<onclick>$VAR[GameFlixMAMEArtVar1]</onclick>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
@@ -1226,30 +1264,71 @@
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32051]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMEArt2)</onclick>
-			<onclick>Skin.SetString(GameFlixMAME2.Art,Snap)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixMAMEArt2)</selected>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
 		</control>
 		<control type="button" id="1515">
 			<include>ButtonCommonValues</include>
-			<label>  --Type</label>
+			<label>$LOCALIZE[32054]</label>
 			<label2>[COLOR $VAR[ThemeLabelColor]]$VAR[GameFlixMAMELabelVar2][/COLOR]</label2>
 			<onclick>$VAR[GameFlixMAMEArtVar2]</onclick>
 			<visible>$EXP[PluginAdvancedLauncher]</visible>
+		</control>
+		<control type="label" id="1523">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32056]</label>
+			<visible>$EXP[PluginAdvancedLauncher]</visible>				
 		</control>		
 		<control type="radiobutton" id="1516">
 			<include>ButtonCommonValues</include>
 			<label>$LOCALIZE[32052]</label>
 			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMEGameLogo)</onclick>
 			<selected>Skin.HasSetting(Enable.GameFlixMAMEGameLogo)</selected>
-		</control>	
+			<visible>$EXP[PluginAdvancedLauncher]</visible>			
+		</control>
 		<control type="radiobutton" id="1517">
 			<include>ButtonCommonValues</include>
-			<label>$LOCALIZE[32045]</label>
-			<onclick>Skin.ToggleSetting(Enable.GameFlixTrailer)</onclick>
-			<selected>Skin.HasSetting(Enable.GameFlixTrailer)</selected>
+			<label>$LOCALIZE[32053]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMECart)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixMAMECart)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>			
+		</control>		
+		<control type="radiobutton" id="1518">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32043]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixController)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixController)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>			
 		</control>
-	</include>	
+		<control type="radiobutton" id="1519">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32044]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixLogo)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixLogo)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>			
+		</control>
+		<control type="radiobutton" id="1520">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32050]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMEBoxBlank)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixMAMEBoxBlank)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + !String.IsEqual(ListItem.Property(platform),MAME)</visible>			
+		</control>-->		
+		<control type="radiobutton" id="1521">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32045]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMETrailer)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixMAMETrailer)</selected>
+			<visible>$EXP[PluginAdvancedLauncher]</visible>			
+		</control>
+		<control type="radiobutton" id="1522">
+			<include>ButtonCommonValues</include>
+			<label>$LOCALIZE[32055]</label>
+			<onclick>Skin.ToggleSetting(Enable.GameFlixMAMETrailerMain)</onclick>
+			<selected>Skin.HasSetting(Enable.GameFlixMAMETrailerMain)</selected>
+			<visible>$EXP[PluginAdvancedLauncher] + Skin.HasSetting(Enable.GameFlixMAMETrailer) + Skin.HasSetting(Enable.GameFlixMAMEArt1)</visible>	
+		</control>	
+	</include>
 	<include name="MusicFlixViewSettings">
 		<!-- MusicFlix -->
 		<control type="button" id="1510">

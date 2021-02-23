@@ -6,6 +6,7 @@
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<onunload>ClearProperty(Progams.Games,Home)</onunload>
+	<onunload condition="Player.HasVideo + [Control.IsVisible(811) | Control.IsVisible(803) | Control.IsVisible(804) | Control.IsVisible(805)]">PlayerControl(Stop)</onunload>
 	<views>50,501,51,54,55,57,500,503,803,804,805,811</views>
 	<menucontrol>9051</menucontrol>
 	<controls>
@@ -18,7 +19,7 @@
 			<onup>50</onup>
 			<ondown>50</ondown>
 			<onclick>50</onclick>
-			<onfocus condition="!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer) + !Player.HasAudio">PlayMedia($INFO[ListItem.trailer],1)</onfocus> <!-- Triggers for trailers (AML Plugin) -->
+			<onfocus condition="!String.IsEmpty(ListItem.Trailer) + [[Control.IsVisible(803) + Skin.HasSetting(Enable.GameFlixSquareTrailer)] | [Control.IsVisible(804) + Skin.HasSetting(Enable.GameFlixLandscapeTrailer)] | [Control.IsVisible(805) + Skin.HasSetting(Enable.GameFlixPortraitTrailer)] | [Control.IsVisible(811) + Skin.HasSetting(Enable.GameFlixMAMETrailer)]] + !Player.HasAudio">PlayMedia($INFO[ListItem.trailer],1)</onfocus> <!-- Triggers for trailers (AML Plugin) -->
 			<onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
 		</control>
 		<control type="button" id="4401">
@@ -481,14 +482,14 @@
 			</control>
 			<control type="multiimage">
 				<aspectratio>keep</aspectratio>
-				<visible>Window.IsActive(1113) + String.IsEmpty(ListItem.Trailer) | !Skin.HasSetting(Enable.GameFlixTrailer) | Player.HasAudio</visible>
+				<visible>Window.IsActive(1113) + [!Player.HasVideo | Player.HasAudio]</visible>
 				<animation effect="fade" time="500">Visible</animation>
 				<include>MultiImageTime</include>
 				<imagepath background="true">$VAR[GlobalBackgroundVar]</imagepath>
 				<colordiffuse>$VAR[BackGroundDiffuseVar]</colordiffuse>
 			</control>
 			<control type="videowindow"> <!-- window for playing trailers for games (AML Plugin)-->
-				<visible>Window.IsActive(1113) + !String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(Enable.GameFlixTrailer)</visible>
+				<visible>Window.IsActive(1113) + !String.IsEmpty(ListItem.Trailer) + Player.HasVideo</visible>
 			</control>
 		</control>		
 	</controls>
